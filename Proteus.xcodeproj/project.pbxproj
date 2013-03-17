@@ -173,6 +173,7 @@
 		F687A51616B4BA9300878140 /* gtx */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gtx; path = glm/gtx; sourceTree = "<group>"; };
 		F687A51716B4BA9300878140 /* virtrev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = virtrev; path = glm/virtrev; sourceTree = "<group>"; };
 		F687A51E16B4BABD00878140 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CodingStandard.rtf; sourceTree = "<group>"; };
 		F6BEF06A16E5EDEF00ACEDC5 /* ALUT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALUT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6BEF06E16E5EDEF00ACEDC5 /* ALUT-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ALUT-Info.plist"; sourceTree = "<group>"; };
 		F6BEF07C16E5EE7300ACEDC5 /* alutBufferData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alutBufferData.c; sourceTree = "<group>"; };
@@ -296,20 +297,22 @@
 		F687A41516B4B63300878140 /* Proteus */ = {
 			isa = PBXGroup;
 			children = (
+				F69CB80B16F645A700A6E7C4 /* docs */,
 				F687A52E16B4BC7700878140 /* src */,
-				F687A41616B4B63300878140 /* Supporting Files */,
+				F687A41616B4B63300878140 /* Resources */,
 				F687A42C16B4B68700878140 /* main.mm */,
 			);
 			name = Proteus;
 			path = osx/Proteus;
 			sourceTree = "<group>";
 		};
-		F687A41616B4B63300878140 /* Supporting Files */ = {
+		F687A41616B4B63300878140 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
+			name = Resources;
+			path = resources;
+			sourceTree = SOURCE_ROOT;
 		};
 		F687A43516B4B73B00878140 /* GLFW */ = {
 			isa = PBXGroup;
@@ -444,6 +447,14 @@
 			children = (
 			);
 			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		F69CB80B16F645A700A6E7C4 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */,
+			);
+			path = docs;
 			sourceTree = SOURCE_ROOT;
 		};
 		F6BEF06C16E5EDEF00ACEDC5 /* ALUT */ = {
