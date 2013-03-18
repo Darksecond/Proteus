@@ -6,8 +6,6 @@
 
 #include <string>
 
-#include "SceneGraph.h"
-
 using namespace Proteus;
 
 static std::string ResourceDirectory()
