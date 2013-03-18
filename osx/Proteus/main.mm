@@ -18,5 +18,13 @@ static std::string ResourceDirectory()
 
 int main(int argc, char* argv[])
 {
+    SceneGraphSystem sgs;
+    
+    SceneGraphSystem::id_t id = sgs.create_sg();
+    SceneGraphSystem::id_t id2 = sgs.create_sg();
+    SceneGraphSystem::id_t id3 = sgs.create_sg();
+    sgs.get(id3).add_node(glm::vec3(1,2,3), glm::quat());
+    sgs.destroy_sg(id2);
+    SceneGraphSystem::id_t id4 = sgs.create_sg();
     return 0;
 }
