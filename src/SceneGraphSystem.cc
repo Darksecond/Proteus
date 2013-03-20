@@ -48,18 +48,11 @@ void SceneGraphSystem::destroy_sg(const id_t id)
     
     if(index.magic != id.magic)
         throw std::runtime_error("Magic does not match"); //TODO use 'real' exception
-    
-    scenegraph_t& object = scenegraphs[index.level][index.sg_index];
-    
-    //move last object
-    object = scenegraphs[index.level].back();
-    scenegraphs[index.level].pop_back();
-    
-    //point index to new location, level and magic stay the same
-    indices[object.id.index].sg_index = index.sg_index;
+        
+    repack(index);
     
     //mark the original index as free (and mark invalid)
-    index.magic = 0;
+    index.magic = INVALID_MAGIC;
     indices_freelist.push_back(id.index);
 }
 
@@ -83,4 +76,49 @@ void SceneGraphSystem::update_sgs()
             sg.scenegraph.update_nodes();
         }
     }
+}
+
+void SceneGraphSystem::link_sg(const id_t source, const id_t target, const SceneGraph::id_t target_node)
+{
+    //TODO
+}
+
+void SceneGraphSystem::unlink_sg(const id_t source)
+{
+    //get index
+    index_t& index = indices[source.index];
+    
+    if(index.magic != source.magic)
+        throw std::runtime_error("Magic does not match"); //TODO use 'real' exception
+    
+    if(index.level == 0)
+        throw std::runtime_error("SG it not linked");
+    
+    scenegraph_t& object = scenegraphs[index.level][index.sg_index];
+
+    //move object to end of level 0
+    size_t new_sg_index = scenegraphs[0].size();
+    scenegraphs[0].push_back(std::move(object));
+    
+    repack(index);
+    
+    //repoint index
+    index.level = 0;
+    index.sg_index = new_sg_index;
+}
+
+void SceneGraphSystem::repack(const index_t& hole)
+{
+    scenegraph_t& hole_object = scenegraphs[hole.level][hole.sg_index];
+    
+    //repack index.level, move last object
+    if(scenegraphs[hole.level].size() != hole.sg_index+1)
+    {
+        hole_object = std::move(scenegraphs[hole.level].back());
+    }
+    
+    scenegraphs[hole.level].pop_back();
+    
+    //point index of repacked object to new location, level and magic stay the same
+    indices[hole_object.id.index].sg_index = hole.sg_index;
 }

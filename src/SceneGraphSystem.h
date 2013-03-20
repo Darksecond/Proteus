@@ -17,6 +17,8 @@ namespace Proteus
             size_t index;
         } id_t;
         
+        static const unsigned INVALID_MAGIC = 0;
+        
     private:
         struct scenegraph_t
         {
@@ -39,6 +41,8 @@ namespace Proteus
         std::vector<size_t> indices_freelist;
         
         unsigned magic;
+        
+        void repack(const index_t& hole);
 
     public:
         SceneGraphSystem();
