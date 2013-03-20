@@ -68,11 +68,22 @@ SceneGraph& SceneGraphSystem::get(const id_t id)
 
 void SceneGraphSystem::update_sgs()
 {
-    for(auto& level : scenegraphs)
+    for(auto& sg : scenegraphs[0])
     {
-        for(auto& sg : level)
+        sg.scenegraph.update_nodes();
+    }
+    
+    for(int i = 1; i < scenegraphs.size(); ++i)
+    {        
+        for(auto& sg : scenegraphs[i])
         {
-            //TODO load data from previous level (if this node is linked)
+            SceneGraph& target = get(sg.target);
+            SceneGraph& source = sg.scenegraph;
+            
+            //source.root() might throw an exception, i let that pass as it's a failure anyways
+            source.set_local_position(source.root(), target.get_global_position(sg.target_node));
+            source.set_local_rotation(source.root(), target.get_global_rotation(sg.target_node));
+            
             sg.scenegraph.update_nodes();
         }
     }
@@ -81,6 +92,7 @@ void SceneGraphSystem::update_sgs()
 void SceneGraphSystem::link_sg(const id_t source, const id_t target, const SceneGraph::id_t target_node)
 {
     //TODO
+    //make sure source has a root and target node has the actual node targetted
 }
 
 void SceneGraphSystem::unlink_sg(const id_t source)
