@@ -7,7 +7,7 @@
 
 namespace Proteus
 {
-    //TODO implementation
+    //TODO rename to 'World', or something?
     class SceneGraphSystem
     {
     public:
@@ -40,7 +40,7 @@ namespace Proteus
         
         std::vector<size_t> indices_freelist;
         
-        unsigned magic;
+        unsigned magic; //TODO rename to generation?
         
         void repack(const index_t& hole);
 
