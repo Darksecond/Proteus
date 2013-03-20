@@ -23,7 +23,7 @@ namespace Proteus
         id_t node_count;
         
         void update_node(const id_t node);
-        glm::mat4 matrix(const id_t node);
+        glm::mat4 matrix(const id_t node) const;
         
     public:
         SceneGraph();
@@ -32,38 +32,38 @@ namespace Proteus
         void update_nodes();
         
         //setters,getters
-        void set_local_position(id_t id, glm::vec3 new_pos);
-        void set_local_rotation(id_t id, glm::quat new_rot);
+        inline void set_local_position(const id_t id, const glm::vec3 new_pos);
+        inline void set_local_rotation(const id_t id, const glm::quat new_rot);
         
-        inline glm::vec3 get_global_position(id_t id);
-        inline glm::quat get_global_rotation(id_t id);
+        inline glm::vec3 get_global_position(const id_t id) const;
+        inline glm::quat get_global_rotation(const id_t id) const;
         
-        inline id_t root();
+        inline id_t root() const;
     };
     
     // --- INLINED METHODS ---
     
-    void SceneGraph::set_local_position(id_t id, glm::vec3 new_pos)
+    void SceneGraph::set_local_position(const id_t id, const glm::vec3 new_pos)
     {
         local_position[id] = new_pos;
     }
     
-    void SceneGraph::set_local_rotation(id_t id, glm::quat new_rot)
+    void SceneGraph::set_local_rotation(const id_t id, const glm::quat new_rot)
     {
         local_rotation[id] = new_rot;
     }
     
-    glm::vec3 SceneGraph::get_global_position(id_t id)
+    glm::vec3 SceneGraph::get_global_position(const id_t id) const
     {
         return global_position[id];
     }
 
-    glm::quat SceneGraph::get_global_rotation(id_t id)
+    glm::quat SceneGraph::get_global_rotation(const id_t id) const
     {
         return global_rotation[id];
     }
 
-    SceneGraph::id_t SceneGraph::root()
+    SceneGraph::id_t SceneGraph::root() const
     {
         if(node_count == 0)
             throw std::runtime_error("No root node");

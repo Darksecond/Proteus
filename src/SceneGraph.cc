@@ -50,7 +50,7 @@ void SceneGraph::update_node(const id_t node)
     }
 }
 
-glm::mat4 SceneGraph::matrix(const id_t node)
+glm::mat4 SceneGraph::matrix(const id_t node) const
 {
     glm::mat4 matrix = glm::translate(glm::mat4(), -global_position[node]);
     matrix = matrix * glm::mat4_cast(global_rotation[node]);

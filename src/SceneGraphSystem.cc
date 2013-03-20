@@ -58,7 +58,7 @@ void SceneGraphSystem::destroy_sg(const id_t id)
 
 SceneGraph& SceneGraphSystem::get(const id_t id)
 {
-    index_t& index = indices[id.index];
+    const index_t& index = indices[id.index];
     
     if(index.magic != id.magic)
         throw std::runtime_error("Magic does not match"); //TODO use 'real' exception
