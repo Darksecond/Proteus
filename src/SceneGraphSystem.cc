@@ -80,7 +80,7 @@ void SceneGraphSystem::update_sgs()
             SceneGraph& target = get(sg.target);
             SceneGraph& source = sg.scenegraph;
             
-            //source.root() might throw an exception, i let that pass as it's a failure anyways
+            //source.root() might throw an exception, i let that pass on up as it's a failure anyways
             source.set_local_position(source.root(), target.get_global_position(sg.target_node));
             source.set_local_rotation(source.root(), target.get_global_rotation(sg.target_node));
             
@@ -93,6 +93,22 @@ void SceneGraphSystem::link_sg(const id_t source, const id_t target, const Scene
 {
     //TODO
     //make sure source has a root and target node has the actual node targetted
+    index_t& source_index = indices[source.index];
+    index_t& target_index = indices[target.index];
+    
+    if(source_index.magic != source.magic)
+        throw std::runtime_error("Source magic does not match"); //TODO use 'real' exception
+    if(target_index.magic != target.magic)
+        throw std::runtime_error("Target magic does not match"); //TODO use 'real' exception
+    if(source_index.level != 0)
+        throw std::runtime_error("SG it already linked");
+    scenegraphs[source_index.level][source_index.sg_index].scenegraph.root(); //this will cause an exception is there is no root
+    
+    move_node(source_index, target_index.level + 1);
+    
+    //set target on source
+    scenegraphs[source_index.level][source_index.sg_index].target = target;
+    scenegraphs[source_index.level][source_index.sg_index].target_node = target_node;
 }
 
 void SceneGraphSystem::unlink_sg(const id_t source)
@@ -106,17 +122,7 @@ void SceneGraphSystem::unlink_sg(const id_t source)
     if(index.level == 0)
         throw std::runtime_error("SG it not linked");
     
-    scenegraph_t& object = scenegraphs[index.level][index.sg_index];
-
-    //move object to end of level 0
-    size_t new_sg_index = scenegraphs[0].size();
-    scenegraphs[0].push_back(std::move(object));
-    
-    repack(index);
-    
-    //repoint index
-    index.level = 0;
-    index.sg_index = new_sg_index;
+    move_node(index, 0);
 }
 
 void SceneGraphSystem::repack(const index_t& hole)
@@ -133,4 +139,25 @@ void SceneGraphSystem::repack(const index_t& hole)
     
     //point index of repacked object to new location, level and magic stay the same
     indices[hole_object.id.index].sg_index = hole.sg_index;
+}
+
+void SceneGraphSystem::move_node(index_t& index, const unsigned new_level)
+{
+    scenegraph_t& object = scenegraphs[index.level][index.sg_index];
+    
+    //create level if it does not exist yet
+    if(new_level+1 > scenegraphs.size())
+    {
+        scenegraphs.emplace_back();
+    }
+    
+    //move object to end of new_level
+    size_t new_sg_index = scenegraphs[new_level].size();
+    scenegraphs[new_level].push_back(std::move(object));
+    
+    repack(index);
+    
+    //repoint index
+    index.level = new_level;
+    index.sg_index = new_sg_index;
 }

@@ -44,6 +44,7 @@ namespace Proteus
         unsigned magic; //TODO rename to generation?
         
         void repack(const index_t& hole);
+        void move_node(index_t& index, const unsigned new_level);
 
     public:
         SceneGraphSystem();
