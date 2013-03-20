@@ -50,6 +50,8 @@ namespace Proteus
         id_t create_sg();
         void destroy_sg(const id_t id);
         SceneGraph& get(const id_t id);
+        
+        //data will be copied FROM target TO source
         void link_sg(const id_t source, const id_t target, const SceneGraph::id_t target_node);
         void unlink_sg(const id_t source);
         void update_sgs();
