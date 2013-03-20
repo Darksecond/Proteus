@@ -3,6 +3,7 @@
 #include <GLM/glm.hpp>
 #include <GLM/gtc/quaternion.hpp>
 #include <vector>
+#include <stdexcept>
 
 namespace Proteus
 {
@@ -31,5 +32,42 @@ namespace Proteus
         void update_nodes();
         
         //setters,getters
+        void set_local_position(id_t id, glm::vec3 new_pos);
+        void set_local_rotation(id_t id, glm::quat new_rot);
+        
+        inline glm::vec3 get_global_position(id_t id);
+        inline glm::quat get_global_rotation(id_t id);
+        
+        inline id_t root();
     };
+    
+    // --- INLINED METHODS ---
+    
+    void SceneGraph::set_local_position(id_t id, glm::vec3 new_pos)
+    {
+        local_position[id] = new_pos;
+    }
+    
+    void SceneGraph::set_local_rotation(id_t id, glm::quat new_rot)
+    {
+        local_rotation[id] = new_rot;
+    }
+    
+    glm::vec3 SceneGraph::get_global_position(id_t id)
+    {
+        return global_position[id];
+    }
+
+    glm::quat SceneGraph::get_global_rotation(id_t id)
+    {
+        return global_rotation[id];
+    }
+
+    SceneGraph::id_t SceneGraph::root()
+    {
+        if(node_count == 0)
+            throw std::runtime_error("No root node");
+        
+        return 0;
+    }
 };
