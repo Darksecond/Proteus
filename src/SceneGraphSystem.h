@@ -24,8 +24,10 @@ namespace Proteus
         {
             SceneGraph scenegraph;
             id_t id;
-            /* id_t target */
-            /* SceneGraph::id_t target_node */
+            
+            //TODO move these to a seperate list-in-list (because level 0 does not use them)
+            id_t target;
+            SceneGraph::id_t target_node;
         };
         
         struct index_t
