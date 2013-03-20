@@ -53,5 +53,6 @@ namespace Proteus
         void link_sg(const id_t source, const id_t target, const SceneGraph::id_t target_node);
         void unlink_sg(const id_t source);
         void update_sgs();
+        bool valid(const id_t id);
     };
 };
