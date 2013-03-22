@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F642BDA616DF9063009EB1DB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F642BDA516DF9063009EB1DB /* OpenAL.framework */; };
-		F677469716F716240065631D /* SceneGraphSystem.cc in Sources */ = {isa = PBXBuildFile; fileRef = F677469516F716240065631D /* SceneGraphSystem.cc */; };
+		F645DF5816FB79AE00E4987E /* Unit.cc in Sources */ = {isa = PBXBuildFile; fileRef = F645DF5616FB79AE00E4987E /* Unit.cc */; };
+		F645DF5B16FB7AAD00E4987E /* Application.cc in Sources */ = {isa = PBXBuildFile; fileRef = F645DF5916FB7AAD00E4987E /* Application.cc */; };
+		F677469716F716240065631D /* World.cc in Sources */ = {isa = PBXBuildFile; fileRef = F677469516F716240065631D /* World.cc */; };
 		F687A41016B4B63300878140 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A40F16B4B63300878140 /* Cocoa.framework */; };
 		F687A42D16B4B68700878140 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = F687A42C16B4B68700878140 /* main.mm */; };
 		F687A43416B4B73B00878140 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A40F16B4B63300878140 /* Cocoa.framework */; };
@@ -126,8 +128,13 @@
 
 /* Begin PBXFileReference section */
 		F642BDA516DF9063009EB1DB /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
-		F677469516F716240065631D /* SceneGraphSystem.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneGraphSystem.cc; sourceTree = "<group>"; };
-		F677469616F716240065631D /* SceneGraphSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneGraphSystem.h; sourceTree = "<group>"; };
+		F645DF5616FB79AE00E4987E /* Unit.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Unit.cc; sourceTree = "<group>"; };
+		F645DF5716FB79AE00E4987E /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		F645DF5916FB7AAD00E4987E /* Application.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cc; sourceTree = "<group>"; };
+		F645DF5A16FB7AAD00E4987E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		F645DF5C16FB7CC800E4987E /* id_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = id_types.h; sourceTree = "<group>"; };
+		F677469516F716240065631D /* World.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cc; sourceTree = "<group>"; };
+		F677469616F716240065631D /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		F687A40B16B4B63300878140 /* Proteus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proteus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F687A40F16B4B63300878140 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F687A41216B4B63300878140 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -453,8 +460,13 @@
 			children = (
 				F6E5D92C16F66D3D00028DDF /* SceneGraph.cc */,
 				F6E5D92D16F66D3D00028DDF /* SceneGraph.h */,
-				F677469516F716240065631D /* SceneGraphSystem.cc */,
-				F677469616F716240065631D /* SceneGraphSystem.h */,
+				F677469516F716240065631D /* World.cc */,
+				F677469616F716240065631D /* World.h */,
+				F645DF5616FB79AE00E4987E /* Unit.cc */,
+				F645DF5716FB79AE00E4987E /* Unit.h */,
+				F645DF5916FB7AAD00E4987E /* Application.cc */,
+				F645DF5A16FB7AAD00E4987E /* Application.h */,
+				F645DF5C16FB7CC800E4987E /* id_types.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -714,7 +726,9 @@
 			files = (
 				F687A42D16B4B68700878140 /* main.mm in Sources */,
 				F6E5D92E16F66D3D00028DDF /* SceneGraph.cc in Sources */,
-				F677469716F716240065631D /* SceneGraphSystem.cc in Sources */,
+				F677469716F716240065631D /* World.cc in Sources */,
+				F645DF5816FB79AE00E4987E /* Unit.cc in Sources */,
+				F645DF5B16FB7AAD00E4987E /* Application.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

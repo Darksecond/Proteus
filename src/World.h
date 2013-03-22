@@ -1,32 +1,29 @@
 #pragma once
 
 #include "SceneGraph.h"
+#include "Unit.h"
+#include "id_types.h"
 
 #include <vector>
 
 namespace Proteus
 {
-    //TODO rename to 'World', or something?
-    class SceneGraphSystem
+    class World
     {
     public:
-        typedef struct
-        {
-            unsigned magic;
-            size_t index;
-        } id_t;
-        
         static const unsigned INVALID_MAGIC = 0;
+        
+        world_id_t id;
         
     private:
         struct scenegraph_t
         {
-            SceneGraph scenegraph;
-            id_t id;
+            Unit unit;
+            unit_id_t id;
             
             //TODO move these to a seperate list-in-list (because level 0 does not use them)
-            id_t target;
-            SceneGraph::id_t target_node;
+            unit_id_t target;
+            node_id_t target_node;
         };
         
         struct index_t
@@ -47,16 +44,16 @@ namespace Proteus
         void move_node(index_t& index, const unsigned new_level);
 
     public:
-        SceneGraphSystem();
+        World(world_id_t id);
         
-        id_t create_sg();
-        void destroy_sg(const id_t id);
-        SceneGraph& get(const id_t id);
+        unit_id_t create_sg();
+        void destroy_sg(const unit_id_t id);
+        Unit& get(const unit_id_t id);
         
         //data will be copied FROM target TO source
-        void link_sg(const id_t source, const id_t target, const SceneGraph::id_t target_node);
-        void unlink_sg(const id_t source);
+        void link_sg(const unit_id_t source, const unit_id_t target, const node_id_t target_node);
+        void unlink_sg(const unit_id_t source);
         void update_sgs();
-        bool valid(const id_t id) const;
+        bool valid(const unit_id_t id) const;
     };
 };

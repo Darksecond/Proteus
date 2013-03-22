@@ -10,7 +10,7 @@ SceneGraph::SceneGraph() : local_position(0), local_rotation(0), global_position
 }
 
 
-SceneGraph::id_t SceneGraph::add_node(const glm::vec3 position, const glm::quat rotation, const id_t parent_node)
+node_id_t SceneGraph::add_node(const glm::vec3 position, const glm::quat rotation, const node_id_t parent_node)
 {
     if(parent_node > node_count && parent_node != NO_PARENT)
         throw std::runtime_error("Cannot set parent to a future node");
@@ -29,15 +29,15 @@ SceneGraph::id_t SceneGraph::add_node(const glm::vec3 position, const glm::quat 
 void SceneGraph::update_nodes()
 {
     //TODO make parallel
-    for(SceneGraph::id_t i = 0; i < node_count; ++i)
+    for(node_id_t i = 0; i < node_count; ++i)
     {
         update_node(i);
     }
 }
 
-void SceneGraph::update_node(const id_t node)
+void SceneGraph::update_node(const node_id_t node)
 {
-    const id_t parent_node = parent[node];
+    const node_id_t parent_node = parent[node];
     if(parent_node == NO_PARENT)
     {
         global_rotation[node] = local_rotation[node];
@@ -50,7 +50,7 @@ void SceneGraph::update_node(const id_t node)
     }
 }
 
-glm::mat4 SceneGraph::matrix(const id_t node) const
+glm::mat4 SceneGraph::matrix(const node_id_t node) const
 {
     glm::mat4 matrix = glm::translate(glm::mat4(), -global_position[node]);
     matrix = matrix * glm::mat4_cast(global_rotation[node]);
