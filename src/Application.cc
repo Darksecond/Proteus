@@ -41,8 +41,9 @@ void Application::destroy_world(const world_id_t world)
     }
     
     worlds.pop_back();
-    
     indices[to_remove.id.index].index = index.index;
+    
+    indices_freelist.push_back(world.index);
 }
 
 World& Application::get_world(const world_id_t world)
