@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F642BDA616DF9063009EB1DB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F642BDA516DF9063009EB1DB /* OpenAL.framework */; };
-		F645DF5816FB79AE00E4987E /* Unit.cc in Sources */ = {isa = PBXBuildFile; fileRef = F645DF5616FB79AE00E4987E /* Unit.cc */; };
-		F645DF5B16FB7AAD00E4987E /* Application.cc in Sources */ = {isa = PBXBuildFile; fileRef = F645DF5916FB7AAD00E4987E /* Application.cc */; };
-		F677469716F716240065631D /* World.cc in Sources */ = {isa = PBXBuildFile; fileRef = F677469516F716240065631D /* World.cc */; };
 		F687A41016B4B63300878140 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A40F16B4B63300878140 /* Cocoa.framework */; };
 		F687A42D16B4B68700878140 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = F687A42C16B4B68700878140 /* main.mm */; };
 		F687A43416B4B73B00878140 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A40F16B4B63300878140 /* Cocoa.framework */; };
@@ -76,7 +73,6 @@
 		F6E3E49616B5508B00BFAC05 /* copying.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49516B5508B00BFAC05 /* copying.txt */; };
 		F6E3E49916B550B300BFAC05 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49816B550B300BFAC05 /* LICENSE.txt */; };
 		F6E3E49B16B550DE00BFAC05 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49A16B550DE00BFAC05 /* COPYING.txt */; };
-		F6E5D92E16F66D3D00028DDF /* SceneGraph.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6E5D92C16F66D3D00028DDF /* SceneGraph.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,13 +124,6 @@
 
 /* Begin PBXFileReference section */
 		F642BDA516DF9063009EB1DB /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
-		F645DF5616FB79AE00E4987E /* Unit.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Unit.cc; sourceTree = "<group>"; };
-		F645DF5716FB79AE00E4987E /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
-		F645DF5916FB7AAD00E4987E /* Application.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cc; sourceTree = "<group>"; };
-		F645DF5A16FB7AAD00E4987E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
-		F645DF5C16FB7CC800E4987E /* id_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = id_types.h; sourceTree = "<group>"; };
-		F677469516F716240065631D /* World.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cc; sourceTree = "<group>"; };
-		F677469616F716240065631D /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		F687A40B16B4B63300878140 /* Proteus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proteus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F687A40F16B4B63300878140 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F687A41216B4B63300878140 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -185,6 +174,9 @@
 		F687A51716B4BA9300878140 /* virtrev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = virtrev; path = glm/virtrev; sourceTree = "<group>"; };
 		F687A51E16B4BABD00878140 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CodingStandard.rtf; sourceTree = "<group>"; };
+		F6A93B6F1704969800133628 /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		F6A93B701704B6AE00133628 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		F6A93B711704BA1400133628 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 		F6BEF06A16E5EDEF00ACEDC5 /* ALUT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALUT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6BEF06E16E5EDEF00ACEDC5 /* ALUT-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ALUT-Info.plist"; sourceTree = "<group>"; };
 		F6BEF07C16E5EE7300ACEDC5 /* alutBufferData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alutBufferData.c; sourceTree = "<group>"; };
@@ -202,8 +194,6 @@
 		F6E3E49516B5508B00BFAC05 /* copying.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copying.txt; sourceTree = "<group>"; };
 		F6E3E49816B550B300BFAC05 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		F6E3E49A16B550DE00BFAC05 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
-		F6E5D92C16F66D3D00028DDF /* SceneGraph.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneGraph.cc; sourceTree = "<group>"; };
-		F6E5D92D16F66D3D00028DDF /* SceneGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneGraph.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,15 +448,7 @@
 		F687A52E16B4BC7700878140 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F6E5D92C16F66D3D00028DDF /* SceneGraph.cc */,
-				F6E5D92D16F66D3D00028DDF /* SceneGraph.h */,
-				F677469516F716240065631D /* World.cc */,
-				F677469616F716240065631D /* World.h */,
-				F645DF5616FB79AE00E4987E /* Unit.cc */,
-				F645DF5716FB79AE00E4987E /* Unit.h */,
-				F645DF5916FB7AAD00E4987E /* Application.cc */,
-				F645DF5A16FB7AAD00E4987E /* Application.h */,
-				F645DF5C16FB7CC800E4987E /* id_types.h */,
+				F6A93B6E1704960000133628 /* STL */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -478,6 +460,16 @@
 			);
 			path = docs;
 			sourceTree = SOURCE_ROOT;
+		};
+		F6A93B6E1704960000133628 /* STL */ = {
+			isa = PBXGroup;
+			children = (
+				F6A93B6F1704969800133628 /* memory.h */,
+				F6A93B701704B6AE00133628 /* types.h */,
+				F6A93B711704BA1400133628 /* log.h */,
+			);
+			path = STL;
+			sourceTree = "<group>";
 		};
 		F6BEF06C16E5EDEF00ACEDC5 /* ALUT */ = {
 			isa = PBXGroup;
@@ -725,10 +717,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F687A42D16B4B68700878140 /* main.mm in Sources */,
-				F6E5D92E16F66D3D00028DDF /* SceneGraph.cc in Sources */,
-				F677469716F716240065631D /* World.cc in Sources */,
-				F645DF5816FB79AE00E4987E /* Unit.cc in Sources */,
-				F645DF5B16FB7AAD00E4987E /* Application.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
