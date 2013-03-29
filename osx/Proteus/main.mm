@@ -2,8 +2,9 @@
 
 #include <string>
 #include <iostream>
+#include <GLFW/glfw.h>
 
-#include "STL/memory.h"
+#include "STL/string_hash.h"
 
 using namespace Proteus;
 

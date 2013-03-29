@@ -176,6 +176,7 @@
 		F687A51E16B4BABD00878140 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		F68FE4651705DF9100D95E6F /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
 		F68FE4661705E2A800D95E6F /* memory.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory.cc; sourceTree = "<group>"; };
+		F68FE4681705F09400D95E6F /* string_hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_hash.h; sourceTree = "<group>"; };
 		F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CodingStandard.rtf; sourceTree = "<group>"; };
 		F6A93B6F1704969800133628 /* memory_internals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory_internals.h; sourceTree = "<group>"; };
 		F6A93B701704B6AE00133628 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
@@ -472,6 +473,7 @@
 				F68FE4661705E2A800D95E6F /* memory.cc */,
 				F6A93B701704B6AE00133628 /* types.h */,
 				F6A93B711704BA1400133628 /* log.h */,
+				F68FE4681705F09400D95E6F /* string_hash.h */,
 			);
 			path = STL;
 			sourceTree = "<group>";
