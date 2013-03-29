@@ -15,7 +15,7 @@ static std::string ResourceDirectory()
 
 int main(int argc, char* argv[])
 {
-    STL::MallocAllocator someArena;
+    STL::Allocator& someArena = STL::defaultAllocator();
     int* a = P_NEW(someArena, int, 3);
     P_DELETE(someArena, a);
     int* b = P_NEW_ARRAY(someArena, int[3]);
