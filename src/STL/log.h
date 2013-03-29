@@ -8,8 +8,8 @@ namespace Proteus
     {
         struct SourceInfo
         {
-            const char* file;
-            int line;
+            const char* const file;
+            const int line;
         };
     };
 };

@@ -173,8 +173,9 @@
 		F687A51616B4BA9300878140 /* gtx */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gtx; path = glm/gtx; sourceTree = "<group>"; };
 		F687A51716B4BA9300878140 /* virtrev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = virtrev; path = glm/virtrev; sourceTree = "<group>"; };
 		F687A51E16B4BABD00878140 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		F68FE4651705DF9100D95E6F /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
 		F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CodingStandard.rtf; sourceTree = "<group>"; };
-		F6A93B6F1704969800133628 /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		F6A93B6F1704969800133628 /* memory_internals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory_internals.h; sourceTree = "<group>"; };
 		F6A93B701704B6AE00133628 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		F6A93B711704BA1400133628 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 		F6BEF06A16E5EDEF00ACEDC5 /* ALUT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALUT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -464,7 +465,8 @@
 		F6A93B6E1704960000133628 /* STL */ = {
 			isa = PBXGroup;
 			children = (
-				F6A93B6F1704969800133628 /* memory.h */,
+				F6A93B6F1704969800133628 /* memory_internals.h */,
+				F68FE4651705DF9100D95E6F /* memory.h */,
 				F6A93B701704B6AE00133628 /* types.h */,
 				F6A93B711704BA1400133628 /* log.h */,
 			);
