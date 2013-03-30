@@ -5,6 +5,7 @@
 #include <GLFW/glfw.h>
 
 #include "STL/string_hash.h"
+#include "STL/memory.h"
 
 using namespace Proteus;
 
@@ -14,7 +15,16 @@ static std::string ResourceDirectory()
     return std::string([path cStringUsingEncoding:NSUTF8StringEncoding]);
 }
 
+struct alignas(128) bigalign
+{
+    uint64_t i[2];
+};
+
 int main(int argc, char* argv[])
 {
-    return 0;
+    STL::HeapArea area(64*1024*1024); //64 megabytes
+    STL::LinearAllocator alloc(area.start(), area.end());
+    int* a = P_NEW(alloc, int, 3);
+    P_DELETE(alloc, a);
+    alloc.reset();
 }

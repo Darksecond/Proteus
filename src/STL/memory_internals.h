@@ -19,6 +19,15 @@ namespace Proteus
     {
         namespace MemoryInternals
         {
+            inline void* align_forward(void* p, size_t align)
+            {
+                uintptr_t pi = uintptr_t(p);
+                const size_t mod = pi % align;
+                if (mod)
+                    pi += (align - mod);
+                return (void*)pi;
+            }
+            
             typedef BoolToType<false> NonPODType;
             typedef BoolToType<true> PODType;
             
