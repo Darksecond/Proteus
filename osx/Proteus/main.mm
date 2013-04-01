@@ -31,4 +31,8 @@ int main(int argc, char* argv[])
     std::string test("test");
     std::cout << STL::StringHash(test.c_str()) << std::endl;
     std::cout << STL::Hash::hash_fnv1a(test.c_str()) << std::endl;
+    
+    STL::FixedString<512> fixed_string;
+    fixed_string.append("some test string");
+    std::cout << fixed_string.c_str() << std::endl;
 }
