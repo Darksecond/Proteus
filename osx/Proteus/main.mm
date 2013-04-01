@@ -3,22 +3,18 @@
 #include <string>
 #include <iostream>
 #include <GLFW/glfw.h>
+#include <string.h>
 
-#include "STL/string_hash.h"
+#include "STL/hash.h"
 #include "STL/memory.h"
-
-using namespace Proteus;
+#include "STL/String/Stringhash.h"
+#include "STL/String/FixedString.h"
 
 static std::string ResourceDirectory()
 {
     NSString* path = [[NSBundle mainBundle] resourcePath];
     return std::string([path cStringUsingEncoding:NSUTF8StringEncoding]);
 }
-
-struct alignas(128) bigalign
-{
-    uint64_t i[2];
-};
 
 int main(int argc, char* argv[])
 {
@@ -27,4 +23,12 @@ int main(int argc, char* argv[])
     int* a = P_NEW(alloc, int, 3);
     P_DELETE(alloc, a);
     alloc.reset();
+    
+    std::cout << STL::Hash::hash_fnv1a("test") << std::endl;
+    
+    std::cout << STL::StringHash("test") << std::endl;
+    
+    std::string test("test");
+    std::cout << STL::StringHash(test.c_str()) << std::endl;
+    std::cout << STL::Hash::hash_fnv1a(test.c_str()) << std::endl;
 }

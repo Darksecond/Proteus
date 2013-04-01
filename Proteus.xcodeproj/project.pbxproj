@@ -55,7 +55,6 @@
 		F687A52816B4BB0400878140 /* GLEW.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F687A4D416B4B89800878140 /* GLEW.framework */; };
 		F687A52916B4BB0400878140 /* GLM.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F687A50116B4BA1100878140 /* GLM.framework */; };
 		F687A52A16B4BBB200878140 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A4CB16B4B81B00878140 /* OpenGL.framework */; };
-		F68FE4671705E2A800D95E6F /* memory.cc in Sources */ = {isa = PBXBuildFile; fileRef = F68FE4661705E2A800D95E6F /* memory.cc */; };
 		F6BEF07B16E5EE5800ACEDC5 /* ALUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F6BEF06A16E5EDEF00ACEDC5 /* ALUT.framework */; };
 		F6BEF08716E5EE7300ACEDC5 /* alutBufferData.c in Sources */ = {isa = PBXBuildFile; fileRef = F6BEF07C16E5EE7300ACEDC5 /* alutBufferData.c */; };
 		F6BEF08816E5EE7300ACEDC5 /* alutCodec.c in Sources */ = {isa = PBXBuildFile; fileRef = F6BEF07D16E5EE7300ACEDC5 /* alutCodec.c */; };
@@ -74,6 +73,9 @@
 		F6E3E49616B5508B00BFAC05 /* copying.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49516B5508B00BFAC05 /* copying.txt */; };
 		F6E3E49916B550B300BFAC05 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49816B550B300BFAC05 /* LICENSE.txt */; };
 		F6E3E49B16B550DE00BFAC05 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49A16B550DE00BFAC05 /* COPYING.txt */; };
+		F6ED105D17088EBE00376288 /* LinearAllocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED105C17088EBE00376288 /* LinearAllocator.cc */; };
+		F6ED105F17088EEB00376288 /* HeapArea.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED105E17088EEB00376288 /* HeapArea.cc */; };
+		F6ED106217088FAF00376288 /* MallocAllocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED106017088FAF00376288 /* MallocAllocator.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,10 +177,9 @@
 		F687A51716B4BA9300878140 /* virtrev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = virtrev; path = glm/virtrev; sourceTree = "<group>"; };
 		F687A51E16B4BABD00878140 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		F68FE4651705DF9100D95E6F /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
-		F68FE4661705E2A800D95E6F /* memory.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memory.cc; sourceTree = "<group>"; };
-		F68FE4681705F09400D95E6F /* string_hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_hash.h; sourceTree = "<group>"; };
+		F68FE4681705F09400D95E6F /* hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
 		F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CodingStandard.rtf; sourceTree = "<group>"; };
-		F6A93B6F1704969800133628 /* memory_internals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory_internals.h; sourceTree = "<group>"; };
+		F6A93B6F1704969800133628 /* NewDelete.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewDelete.h; sourceTree = "<group>"; };
 		F6A93B701704B6AE00133628 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		F6A93B711704BA1400133628 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
 		F6BEF06A16E5EDEF00ACEDC5 /* ALUT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALUT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +199,15 @@
 		F6E3E49516B5508B00BFAC05 /* copying.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copying.txt; sourceTree = "<group>"; };
 		F6E3E49816B550B300BFAC05 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		F6E3E49A16B550DE00BFAC05 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
+		F6ED105917088C7000376288 /* Arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arena.h; sourceTree = "<group>"; };
+		F6ED105A17088CD800376288 /* HeapArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeapArea.h; sourceTree = "<group>"; };
+		F6ED105B17088D0F00376288 /* LinearAllocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinearAllocator.h; sourceTree = "<group>"; };
+		F6ED105C17088EBE00376288 /* LinearAllocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearAllocator.cc; sourceTree = "<group>"; };
+		F6ED105E17088EEB00376288 /* HeapArea.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeapArea.cc; sourceTree = "<group>"; };
+		F6ED106017088FAF00376288 /* MallocAllocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MallocAllocator.cc; sourceTree = "<group>"; };
+		F6ED106117088FAF00376288 /* MallocAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MallocAllocator.h; sourceTree = "<group>"; };
+		F6ED10651709B1DE00376288 /* StringHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHash.h; sourceTree = "<group>"; };
+		F6ED10671709B8A800376288 /* FixedString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixedString.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -468,12 +478,12 @@
 		F6A93B6E1704960000133628 /* STL */ = {
 			isa = PBXGroup;
 			children = (
-				F6A93B6F1704969800133628 /* memory_internals.h */,
+				F6ED10631709B15500376288 /* String */,
+				F6ED105817088BC900376288 /* Memory */,
 				F68FE4651705DF9100D95E6F /* memory.h */,
-				F68FE4661705E2A800D95E6F /* memory.cc */,
 				F6A93B701704B6AE00133628 /* types.h */,
 				F6A93B711704BA1400133628 /* log.h */,
-				F68FE4681705F09400D95E6F /* string_hash.h */,
+				F68FE4681705F09400D95E6F /* hash.h */,
 			);
 			path = STL;
 			sourceTree = "<group>";
@@ -505,6 +515,30 @@
 				F6BEF06E16E5EDEF00ACEDC5 /* ALUT-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6ED105817088BC900376288 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				F6A93B6F1704969800133628 /* NewDelete.h */,
+				F6ED105917088C7000376288 /* Arena.h */,
+				F6ED105A17088CD800376288 /* HeapArea.h */,
+				F6ED105E17088EEB00376288 /* HeapArea.cc */,
+				F6ED105B17088D0F00376288 /* LinearAllocator.h */,
+				F6ED105C17088EBE00376288 /* LinearAllocator.cc */,
+				F6ED106117088FAF00376288 /* MallocAllocator.h */,
+				F6ED106017088FAF00376288 /* MallocAllocator.cc */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		F6ED10631709B15500376288 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				F6ED10651709B1DE00376288 /* StringHash.h */,
+				F6ED10671709B8A800376288 /* FixedString.h */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,7 +758,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F687A42D16B4B68700878140 /* main.mm in Sources */,
-				F68FE4671705E2A800D95E6F /* memory.cc in Sources */,
+				F6ED105D17088EBE00376288 /* LinearAllocator.cc in Sources */,
+				F6ED105F17088EEB00376288 /* HeapArea.cc in Sources */,
+				F6ED106217088FAF00376288 /* MallocAllocator.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,12 @@
 #pragma once
 
-#define P_SOURCEINFO Proteus::STL::SourceInfo{__FILE__, __LINE__}
+#define P_SOURCEINFO STL::SourceInfo{__FILE__, __LINE__}
 
-namespace Proteus
+namespace STL
 {
-    namespace STL
+    struct SourceInfo
     {
-        struct SourceInfo
-        {
-            const char* const file;
-            const int line;
-        };
+        const char* const file;
+        const int line;
     };
 };
