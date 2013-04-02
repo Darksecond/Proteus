@@ -5,10 +5,11 @@
 #include <GLFW/glfw.h>
 #include <string.h>
 
-#include "STL/hash.h"
-#include "STL/memory.h"
-#include "STL/String/Stringhash.h"
-#include "STL/String/FixedString.h"
+#include "stl/hash.h"
+#include "stl/memory.h"
+#include "stl/string/Stringhash.h"
+#include "stl/string/FixedString.h"
+#include "stl/memory/linear_allocator.h"
 
 static std::string ResourceDirectory()
 {
@@ -19,7 +20,7 @@ static std::string ResourceDirectory()
 int main(int argc, char* argv[])
 {
     stl::heap_area area(64*1024*1024); //64 megabytes
-    stl::LinearAllocator alloc(area.start(), area.end());
+    stl::linear_allocator alloc(area.start(), area.end());
     int* a = P_NEW(alloc, int, 3);
     P_DELETE(alloc, a);
     alloc.reset();
