@@ -6,19 +6,19 @@
 namespace stl
 {
     template<class T>
-    struct TypeAndCount
+    struct type_and_count
     {
     };
     
     template<class T, size_t N>
-    struct TypeAndCount<T[N]>
+    struct type_and_count<T[N]>
     {
         typedef T Type;
         static const size_t Count = N;
     };
     
     template<bool I>
-    struct BoolToType
+    struct bool_to_type
     {
     };
 };

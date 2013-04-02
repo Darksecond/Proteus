@@ -9,7 +9,7 @@
 
 #define P_DELETE(arena, object) stl::memory_internals::delete_mem(arena, object, P_SOURCEINFO)
 
-#define P_NEW_ARRAY(arena, type) stl::memory_internals::new_array_mem<TypeAndCount<type>::Type>(arena, stl::TypeAndCount<type>::Count, P_SOURCEINFO, stl::BoolToType<std::is_pod<stl::TypeAndCount<type>::Type>::value>())
+#define P_NEW_ARRAY(arena, type) stl::memory_internals::new_array_mem<stl::type_and_count<type>::Type>(arena, stl::type_and_count<type>::Count, P_SOURCEINFO, stl::bool_to_type<std::is_pod<stl::type_and_count<type>::Type>::value>())
 
 #define P_DELETE_ARRAY(arena, ptr) stl::memory_internals::delete_array_pointer(arena, ptr, P_SOURCEINFO);
 
@@ -27,8 +27,8 @@ namespace stl
             return (void*)pi;
         }
         
-        typedef BoolToType<false> NonPODType;
-        typedef BoolToType<true> PODType;
+        typedef bool_to_type<false> NonPODType;
+        typedef bool_to_type<true> PODType;
         
         template<class A, typename T>
         void delete_mem(A& alloc, T* object, const source_info& info)
@@ -99,7 +99,7 @@ namespace stl
         void delete_array_mem(A& arena, T* ptr, const source_info& info)
         {
             if(ptr)
-                delete_array_mem(arena, ptr, info, BoolToType<std::is_pod<T>::value>());
+                delete_array_mem(arena, ptr, info, bool_to_type<std::is_pod<T>::value>());
         }
     }
 };
