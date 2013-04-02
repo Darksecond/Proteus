@@ -1,7 +1,7 @@
 #pragma once
 
 #include "memory/new_delete.h"
-#include "memory/Arena.h"
+#include "memory/arena.h"
 #include "memory/heap_area.h"
 
 //EXAMPLES:
