@@ -31,7 +31,7 @@ namespace stl
         typedef BoolToType<true> PODType;
         
         template<class A, typename T>
-        void delete_mem(A& alloc, T* object, const SourceInfo& info)
+        void delete_mem(A& alloc, T* object, const source_info& info)
         {
             if(object)
             {
@@ -41,13 +41,13 @@ namespace stl
         }
         
         template<typename T, class A>
-        T* new_array_mem(A& alloc, size_t count, const SourceInfo& info, PODType)
+        T* new_array_mem(A& alloc, size_t count, const source_info& info, PODType)
         {
             return static_cast<T*>(alloc.allocate(sizeof(T) * count, alignof(T), 0, info));
         }
         
         template<typename T, class A>
-        T* new_array_mem(A& alloc, size_t count, const SourceInfo& info, NonPODType)
+        T* new_array_mem(A& alloc, size_t count, const source_info& info, NonPODType)
         {
             union
             {
@@ -71,13 +71,13 @@ namespace stl
         }
         
         template<typename T, class A>
-        void delete_array_mem(A& alloc, T* ptr, const SourceInfo& info, PODType)
+        void delete_array_mem(A& alloc, T* ptr, const source_info& info, PODType)
         {
             alloc.free(ptr, info);
         }
         
         template<typename T, class A>
-        void delete_array_mem(A& alloc, T* ptr, const SourceInfo& info, NonPODType)
+        void delete_array_mem(A& alloc, T* ptr, const source_info& info, NonPODType)
         {
             union
             {
@@ -96,7 +96,7 @@ namespace stl
         }
         
         template <typename T, class A>
-        void delete_array_mem(A& arena, T* ptr, const SourceInfo& info)
+        void delete_array_mem(A& arena, T* ptr, const source_info& info)
         {
             if(ptr)
                 delete_array_mem(arena, ptr, info, BoolToType<std::is_pod<T>::value>());

@@ -14,8 +14,8 @@ namespace stl
         linear_allocator(const void* start, const void* end);
         
         //address+offset should be aligned, NOT address itself
-        void* allocate(const size_t size, const size_t align, const size_t alignment_offset, const stl::SourceInfo& info);
-        void free(void* object, const stl::SourceInfo& info);
+        void* allocate(const size_t size, const size_t align, const size_t alignment_offset, const stl::source_info& info);
+        void free(void* object, const stl::source_info& info);
         inline void reset() { _current = _start; }
     };
 };
