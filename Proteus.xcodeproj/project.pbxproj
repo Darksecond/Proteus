@@ -206,7 +206,7 @@
 		F6ED105E17088EEB00376288 /* heap_area.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heap_area.cc; sourceTree = "<group>"; };
 		F6ED106017088FAF00376288 /* malloc_allocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = malloc_allocator.cc; sourceTree = "<group>"; };
 		F6ED106117088FAF00376288 /* malloc_allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = malloc_allocator.h; sourceTree = "<group>"; };
-		F6ED10651709B1DE00376288 /* StringHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHash.h; sourceTree = "<group>"; };
+		F6ED10651709B1DE00376288 /* string_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = string_hash.h; sourceTree = "<group>"; };
 		F6ED10671709B8A800376288 /* FixedString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixedString.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -535,7 +535,7 @@
 		F6ED10631709B15500376288 /* string */ = {
 			isa = PBXGroup;
 			children = (
-				F6ED10651709B1DE00376288 /* StringHash.h */,
+				F6ED10651709B1DE00376288 /* string_hash.h */,
 				F6ED10671709B8A800376288 /* FixedString.h */,
 			);
 			path = string;

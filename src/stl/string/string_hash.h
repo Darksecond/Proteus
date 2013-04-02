@@ -5,12 +5,12 @@
 
 namespace stl
 {
-    class StringHash
+    class string_hash
     {
     public:
         typedef uint64_t Type;
         
-        constexpr StringHash(const char* str) : hash(Hash::hash_fnv1a(str))
+        constexpr string_hash(const char* str) : hash(Hash::hash_fnv1a(str))
         {
         }
         
