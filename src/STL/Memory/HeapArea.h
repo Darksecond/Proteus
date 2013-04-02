@@ -2,7 +2,7 @@
 
 #include "types.h"
 
-namespace STL
+namespace stl
 {
     class HeapArea
     {

@@ -2,23 +2,23 @@
 
 #include <stdlib.h>
 
-STL::HeapArea::HeapArea(size_t s) : _start(nullptr), _size(0)
+stl::HeapArea::HeapArea(size_t s) : _start(nullptr), _size(0)
 {
     reserve(s);
 }
 
-STL::HeapArea::~HeapArea()
+stl::HeapArea::~HeapArea()
 {
     release();
 }
 
-STL::HeapArea::HeapArea(STL::HeapArea&& other) : _start(other.start()), _size(other.size())
+stl::HeapArea::HeapArea(stl::HeapArea&& other) : _start(other.start()), _size(other.size())
 {
     other._start = nullptr;
     other._size = 0;
 }
 
-STL::HeapArea& STL::HeapArea::operator=(STL::HeapArea&& other)
+stl::HeapArea& stl::HeapArea::operator=(stl::HeapArea&& other)
 {
     release();
     
@@ -31,7 +31,7 @@ STL::HeapArea& STL::HeapArea::operator=(STL::HeapArea&& other)
     return *this;
 }
 
-void STL::HeapArea::reserve(size_t new_size)
+void stl::HeapArea::reserve(size_t new_size)
 {
     if(_size == 0)
     {
@@ -40,7 +40,7 @@ void STL::HeapArea::reserve(size_t new_size)
     }
 }
 
-void STL::HeapArea::release()
+void stl::HeapArea::release()
 {
     if(_size != 0)
     {

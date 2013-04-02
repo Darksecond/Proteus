@@ -7,13 +7,13 @@
 
 #define P_NEW(arena, type, ...) (new ((arena).allocate(sizeof(type), alignof(type), 0, P_SOURCEINFO)) type(__VA_ARGS__))
 
-#define P_DELETE(arena, object) STL::MemoryInternals::Delete(arena, object, P_SOURCEINFO)
+#define P_DELETE(arena, object) stl::MemoryInternals::Delete(arena, object, P_SOURCEINFO)
 
-#define P_NEW_ARRAY(arena, type) STL::MemoryInternals::NewArray<TypeAndCount<type>::Type>(arena, STL::TypeAndCount<type>::Count, P_SOURCEINFO, STL::BoolToType<std::is_pod<STL::TypeAndCount<type>::Type>::value>())
+#define P_NEW_ARRAY(arena, type) stl::MemoryInternals::NewArray<TypeAndCount<type>::Type>(arena, stl::TypeAndCount<type>::Count, P_SOURCEINFO, stl::BoolToType<std::is_pod<stl::TypeAndCount<type>::Type>::value>())
 
-#define P_DELETE_ARRAY(arena, ptr) STL::MemoryInternals::DeleteArray(arena, ptr, P_SOURCEINFO);
+#define P_DELETE_ARRAY(arena, ptr) stl::MemoryInternals::DeleteArray(arena, ptr, P_SOURCEINFO);
 
-namespace STL
+namespace stl
 {
     namespace MemoryInternals
     {
