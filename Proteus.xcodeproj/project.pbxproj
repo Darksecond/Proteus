@@ -74,7 +74,7 @@
 		F6E3E49916B550B300BFAC05 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49816B550B300BFAC05 /* LICENSE.txt */; };
 		F6E3E49B16B550DE00BFAC05 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49A16B550DE00BFAC05 /* COPYING.txt */; };
 		F6ED105D17088EBE00376288 /* LinearAllocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED105C17088EBE00376288 /* LinearAllocator.cc */; };
-		F6ED105F17088EEB00376288 /* HeapArea.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED105E17088EEB00376288 /* HeapArea.cc */; };
+		F6ED105F17088EEB00376288 /* heap_area.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED105E17088EEB00376288 /* heap_area.cc */; };
 		F6ED106217088FAF00376288 /* MallocAllocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED106017088FAF00376288 /* MallocAllocator.cc */; };
 /* End PBXBuildFile section */
 
@@ -200,10 +200,10 @@
 		F6E3E49816B550B300BFAC05 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		F6E3E49A16B550DE00BFAC05 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
 		F6ED105917088C7000376288 /* arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arena.h; sourceTree = "<group>"; };
-		F6ED105A17088CD800376288 /* HeapArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeapArea.h; sourceTree = "<group>"; };
+		F6ED105A17088CD800376288 /* heap_area.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = heap_area.h; sourceTree = "<group>"; };
 		F6ED105B17088D0F00376288 /* LinearAllocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinearAllocator.h; sourceTree = "<group>"; };
 		F6ED105C17088EBE00376288 /* LinearAllocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearAllocator.cc; sourceTree = "<group>"; };
-		F6ED105E17088EEB00376288 /* HeapArea.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeapArea.cc; sourceTree = "<group>"; };
+		F6ED105E17088EEB00376288 /* heap_area.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heap_area.cc; sourceTree = "<group>"; };
 		F6ED106017088FAF00376288 /* MallocAllocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MallocAllocator.cc; sourceTree = "<group>"; };
 		F6ED106117088FAF00376288 /* MallocAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MallocAllocator.h; sourceTree = "<group>"; };
 		F6ED10651709B1DE00376288 /* StringHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHash.h; sourceTree = "<group>"; };
@@ -522,8 +522,8 @@
 			children = (
 				F6A93B6F1704969800133628 /* new_delete.h */,
 				F6ED105917088C7000376288 /* arena.h */,
-				F6ED105A17088CD800376288 /* HeapArea.h */,
-				F6ED105E17088EEB00376288 /* HeapArea.cc */,
+				F6ED105A17088CD800376288 /* heap_area.h */,
+				F6ED105E17088EEB00376288 /* heap_area.cc */,
 				F6ED105B17088D0F00376288 /* LinearAllocator.h */,
 				F6ED105C17088EBE00376288 /* LinearAllocator.cc */,
 				F6ED106117088FAF00376288 /* MallocAllocator.h */,
@@ -759,7 +759,7 @@
 			files = (
 				F687A42D16B4B68700878140 /* main.mm in Sources */,
 				F6ED105D17088EBE00376288 /* LinearAllocator.cc in Sources */,
-				F6ED105F17088EEB00376288 /* HeapArea.cc in Sources */,
+				F6ED105F17088EEB00376288 /* heap_area.cc in Sources */,
 				F6ED106217088FAF00376288 /* MallocAllocator.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

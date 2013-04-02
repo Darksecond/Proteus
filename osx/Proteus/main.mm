@@ -18,7 +18,7 @@ static std::string ResourceDirectory()
 
 int main(int argc, char* argv[])
 {
-    stl::HeapArea area(64*1024*1024); //64 megabytes
+    stl::heap_area area(64*1024*1024); //64 megabytes
     stl::LinearAllocator alloc(area.start(), area.end());
     int* a = P_NEW(alloc, int, 3);
     P_DELETE(alloc, a);

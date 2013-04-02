@@ -4,19 +4,19 @@
 
 namespace stl
 {
-    class HeapArea
+    class heap_area
     {
         void* _start;
         size_t _size;
     public:
-        explicit HeapArea(size_t s);
-        ~HeapArea();
+        explicit heap_area(size_t s);
+        ~heap_area();
         
-        HeapArea(HeapArea& other) = delete;
-        HeapArea& operator=(HeapArea& other) = delete;
+        heap_area(heap_area& other) = delete;
+        heap_area& operator=(heap_area& other) = delete;
         
-        HeapArea(HeapArea&& other);
-        HeapArea& operator=(HeapArea&& other);
+        heap_area(heap_area&& other);
+        heap_area& operator=(heap_area&& other);
         
         void reserve(size_t new_size);
         void release();

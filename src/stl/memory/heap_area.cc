@@ -1,24 +1,24 @@
-#include "HeapArea.h"
+#include "heap_area.h"
 
 #include <stdlib.h>
 
-stl::HeapArea::HeapArea(size_t s) : _start(nullptr), _size(0)
+stl::heap_area::heap_area(size_t s) : _start(nullptr), _size(0)
 {
     reserve(s);
 }
 
-stl::HeapArea::~HeapArea()
+stl::heap_area::~heap_area()
 {
     release();
 }
 
-stl::HeapArea::HeapArea(stl::HeapArea&& other) : _start(other.start()), _size(other.size())
+stl::heap_area::heap_area(stl::heap_area&& other) : _start(other.start()), _size(other.size())
 {
     other._start = nullptr;
     other._size = 0;
 }
 
-stl::HeapArea& stl::HeapArea::operator=(stl::HeapArea&& other)
+stl::heap_area& stl::heap_area::operator=(stl::heap_area&& other)
 {
     release();
     
@@ -31,7 +31,7 @@ stl::HeapArea& stl::HeapArea::operator=(stl::HeapArea&& other)
     return *this;
 }
 
-void stl::HeapArea::reserve(size_t new_size)
+void stl::heap_area::reserve(size_t new_size)
 {
     if(_size == 0)
     {
@@ -40,7 +40,7 @@ void stl::HeapArea::reserve(size_t new_size)
     }
 }
 
-void stl::HeapArea::release()
+void stl::heap_area::release()
 {
     if(_size != 0)
     {

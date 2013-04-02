@@ -2,7 +2,7 @@
 
 #include "memory/new_delete.h"
 #include "memory/Arena.h"
-#include "memory/HeapArea.h"
+#include "memory/heap_area.h"
 #include "memory/LinearAllocator.h"
 #include "memory/MallocAllocator.h"
 
