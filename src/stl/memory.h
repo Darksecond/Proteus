@@ -3,7 +3,6 @@
 #include "memory/new_delete.h"
 #include "memory/Arena.h"
 #include "memory/heap_area.h"
-#include "memory/MallocAllocator.h"
 
 //EXAMPLES:
 //STL::FalbackAllocator& someArena = fallbackAllocator();

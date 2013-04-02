@@ -75,7 +75,7 @@
 		F6E3E49B16B550DE00BFAC05 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49A16B550DE00BFAC05 /* COPYING.txt */; };
 		F6ED105D17088EBE00376288 /* linear_allocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED105C17088EBE00376288 /* linear_allocator.cc */; };
 		F6ED105F17088EEB00376288 /* heap_area.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED105E17088EEB00376288 /* heap_area.cc */; };
-		F6ED106217088FAF00376288 /* MallocAllocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED106017088FAF00376288 /* MallocAllocator.cc */; };
+		F6ED106217088FAF00376288 /* malloc_allocator.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6ED106017088FAF00376288 /* malloc_allocator.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,8 +204,8 @@
 		F6ED105B17088D0F00376288 /* linear_allocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = linear_allocator.h; sourceTree = "<group>"; };
 		F6ED105C17088EBE00376288 /* linear_allocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = linear_allocator.cc; sourceTree = "<group>"; };
 		F6ED105E17088EEB00376288 /* heap_area.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heap_area.cc; sourceTree = "<group>"; };
-		F6ED106017088FAF00376288 /* MallocAllocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MallocAllocator.cc; sourceTree = "<group>"; };
-		F6ED106117088FAF00376288 /* MallocAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MallocAllocator.h; sourceTree = "<group>"; };
+		F6ED106017088FAF00376288 /* malloc_allocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = malloc_allocator.cc; sourceTree = "<group>"; };
+		F6ED106117088FAF00376288 /* malloc_allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = malloc_allocator.h; sourceTree = "<group>"; };
 		F6ED10651709B1DE00376288 /* StringHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHash.h; sourceTree = "<group>"; };
 		F6ED10671709B8A800376288 /* FixedString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixedString.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -526,8 +526,8 @@
 				F6ED105E17088EEB00376288 /* heap_area.cc */,
 				F6ED105B17088D0F00376288 /* linear_allocator.h */,
 				F6ED105C17088EBE00376288 /* linear_allocator.cc */,
-				F6ED106117088FAF00376288 /* MallocAllocator.h */,
-				F6ED106017088FAF00376288 /* MallocAllocator.cc */,
+				F6ED106117088FAF00376288 /* malloc_allocator.h */,
+				F6ED106017088FAF00376288 /* malloc_allocator.cc */,
 			);
 			path = memory;
 			sourceTree = "<group>";
@@ -760,7 +760,7 @@
 				F687A42D16B4B68700878140 /* main.mm in Sources */,
 				F6ED105D17088EBE00376288 /* linear_allocator.cc in Sources */,
 				F6ED105F17088EEB00376288 /* heap_area.cc in Sources */,
-				F6ED106217088FAF00376288 /* MallocAllocator.cc in Sources */,
+				F6ED106217088FAF00376288 /* malloc_allocator.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
