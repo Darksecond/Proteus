@@ -2,7 +2,7 @@
 
 #include "types.h"
 
-namespace STL
+namespace stl
 {
     //TODO move into 'STL' namespace?
     //code from: http://seanmiddleditch.com/journal/2011/05/compile-time-string-hashing-in-c0x/

@@ -4,7 +4,7 @@
 #include <cassert>
 #include <cstdio>
 
-namespace STL
+namespace stl
 {
     template<size_t N>
     class FixedString

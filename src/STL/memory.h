@@ -19,7 +19,7 @@
  };
  */
 
-namespace STL
+namespace stl
 {
     //TODO add 'arena' class-range after all
     //TODO write more allocators (pool, linear, stack)

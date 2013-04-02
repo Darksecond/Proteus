@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <stdint.h>
 
-namespace STL
+namespace stl
 {
     template<class T>
     struct TypeAndCount

@@ -462,7 +462,7 @@
 		F687A52E16B4BC7700878140 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F6A93B6E1704960000133628 /* STL */,
+				F6A93B6E1704960000133628 /* stl */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -475,17 +475,17 @@
 			path = docs;
 			sourceTree = SOURCE_ROOT;
 		};
-		F6A93B6E1704960000133628 /* STL */ = {
+		F6A93B6E1704960000133628 /* stl */ = {
 			isa = PBXGroup;
 			children = (
-				F6ED10631709B15500376288 /* String */,
-				F6ED105817088BC900376288 /* Memory */,
+				F6ED10631709B15500376288 /* string */,
+				F6ED105817088BC900376288 /* memory */,
 				F68FE4651705DF9100D95E6F /* memory.h */,
 				F6A93B701704B6AE00133628 /* types.h */,
 				F6A93B711704BA1400133628 /* log.h */,
 				F68FE4681705F09400D95E6F /* hash.h */,
 			);
-			path = STL;
+			path = stl;
 			sourceTree = "<group>";
 		};
 		F6BEF06C16E5EDEF00ACEDC5 /* ALUT */ = {
@@ -517,7 +517,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F6ED105817088BC900376288 /* Memory */ = {
+		F6ED105817088BC900376288 /* memory */ = {
 			isa = PBXGroup;
 			children = (
 				F6A93B6F1704969800133628 /* NewDelete.h */,
@@ -529,16 +529,16 @@
 				F6ED106117088FAF00376288 /* MallocAllocator.h */,
 				F6ED106017088FAF00376288 /* MallocAllocator.cc */,
 			);
-			path = Memory;
+			path = memory;
 			sourceTree = "<group>";
 		};
-		F6ED10631709B15500376288 /* String */ = {
+		F6ED10631709B15500376288 /* string */ = {
 			isa = PBXGroup;
 			children = (
 				F6ED10651709B1DE00376288 /* StringHash.h */,
 				F6ED10671709B8A800376288 /* FixedString.h */,
 			);
-			path = String;
+			path = string;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

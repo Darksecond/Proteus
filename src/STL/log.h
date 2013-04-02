@@ -1,8 +1,8 @@
 #pragma once
 
-#define P_SOURCEINFO STL::SourceInfo{__FILE__, __FUNCTION__, __LINE__}
+#define P_SOURCEINFO stl::SourceInfo{__FILE__, __FUNCTION__, __LINE__}
 
-namespace STL
+namespace stl
 {
     struct SourceInfo
     {

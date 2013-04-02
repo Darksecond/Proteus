@@ -3,7 +3,7 @@
 #include "types.h"
 #include "hash.h"
 
-namespace STL
+namespace stl
 {
     class StringHash
     {
