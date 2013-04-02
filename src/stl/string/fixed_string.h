@@ -23,6 +23,11 @@ namespace stl
             memcpy(_string, str, _length+1); //copy null byte as well
         }
         
+        /**
+         * Clear the fixed_string.
+         * This resets the length.
+         * This also makes the first/last byte a null byte.
+         */
         void clear()
         {
             _length = 0;
@@ -41,6 +46,9 @@ namespace stl
             return _string[i];
         }
         
+        /**
+         * Returns a c_str compatible string for use with external code.
+         */
         inline const char* c_str() const
         {
             return _string;
@@ -51,6 +59,17 @@ namespace stl
             return _length;
         }
         
+        inline size_t capacity() const
+        {
+            return N;
+        }
+        
+        /**
+         * Append a count bytes of the string str to the fixed_string.
+         * The current length + the count cannot be greater than the capacity.
+         * An assert _will_ be raised if it does not fit.
+         * Append will make sure the fixed_string always ends with a null byte.
+         */
         inline void append(const char* str, size_t count)
         {
             assert(_length + count < N);
@@ -60,26 +79,37 @@ namespace stl
             _string[_length] = 0;
         }
         
+        /**
+         * Append a string to the fixed string.
+         * An assert _will_ be raised if it does not fit, so be careful.
+         */
         inline void append(const char* str)
         {
             append(str, strlen(str));
         }
         
+        /**
+         * This will append a formatted string to the fixed_string.
+         * It will take in as many arguments as you supply in a printf style.
+         * If the end product formatted string does not fit it is clipped.
+         * When clipped, it will always end with a null byte so it is still a valid c_str.
+         */
         inline void append_fmt(const char* format, ...)
         {
             va_list formatters;
             va_start(formatters, format);
+            
             const int chars_written = vsnprintf(_string + _length, N - _length, format, formatters);
             if(chars_written < 0)
             {
-                //TODO warning!
                 _length = N-1;
-                _string[_length] = 0; //append null byte
+                _string[_length] = 0; //clip string, append null byte
             }
             else
             {
                 _length += chars_written;
             }
+            
             va_end(formatters);
         }
     };
