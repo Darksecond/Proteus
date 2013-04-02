@@ -34,5 +34,6 @@ int main(int argc, char* argv[])
     
     STL::FixedString<512> fixed_string;
     fixed_string.append("some test string");
+    fixed_string.append_fmt(" test: %i", 123);
     std::cout << fixed_string.c_str() << std::endl;
 }

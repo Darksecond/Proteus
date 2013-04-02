@@ -2,6 +2,7 @@
 
 #include "types.h"
 #include <cassert>
+#include <cstdio>
 
 namespace STL
 {
@@ -62,6 +63,24 @@ namespace STL
         inline void append(const char* str)
         {
             append(str, strlen(str));
+        }
+        
+        inline void append_fmt(const char* format, ...)
+        {
+            va_list formatters;
+            va_start(formatters, format);
+            const int chars_written = vsnprintf(_string + _length, N - _length, format, formatters);
+            if(chars_written < 0)
+            {
+                //TODO warning!
+                _length = N-1;
+                _string[_length] = 0; //append null byte
+            }
+            else
+            {
+                _length += chars_written;
+            }
+            va_end(formatters);
         }
     };
 }
