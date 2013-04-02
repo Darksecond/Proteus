@@ -199,7 +199,7 @@
 		F6E3E49516B5508B00BFAC05 /* copying.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copying.txt; sourceTree = "<group>"; };
 		F6E3E49816B550B300BFAC05 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		F6E3E49A16B550DE00BFAC05 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
-		F6ED105917088C7000376288 /* Arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arena.h; sourceTree = "<group>"; };
+		F6ED105917088C7000376288 /* arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arena.h; sourceTree = "<group>"; };
 		F6ED105A17088CD800376288 /* HeapArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeapArea.h; sourceTree = "<group>"; };
 		F6ED105B17088D0F00376288 /* LinearAllocator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinearAllocator.h; sourceTree = "<group>"; };
 		F6ED105C17088EBE00376288 /* LinearAllocator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearAllocator.cc; sourceTree = "<group>"; };
@@ -521,7 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				F6A93B6F1704969800133628 /* NewDelete.h */,
-				F6ED105917088C7000376288 /* Arena.h */,
+				F6ED105917088C7000376288 /* arena.h */,
 				F6ED105A17088CD800376288 /* HeapArea.h */,
 				F6ED105E17088EEB00376288 /* HeapArea.cc */,
 				F6ED105B17088D0F00376288 /* LinearAllocator.h */,
