@@ -10,7 +10,7 @@ namespace stl
     public:
         typedef uint64_t Type;
         
-        constexpr string_hash(const char* str) : hash(Hash::hash_fnv1a(str))
+        constexpr string_hash(const char* str) : hash(hash::hash_fnv1a(str))
         {
         }
         

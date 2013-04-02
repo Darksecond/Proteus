@@ -5,8 +5,9 @@
 namespace stl
 {
     //TODO move into 'STL' namespace?
+    //TODO into 'fnv1a.h' file in 'Hashes' folder
     //code from: http://seanmiddleditch.com/journal/2011/05/compile-time-string-hashing-in-c0x/
-    namespace Hash
+    namespace hash
     {
         // FNV-1a constants
         static constexpr uint64_t basis = 14695981039346656037ULL;
