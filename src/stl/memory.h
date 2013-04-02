@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Memory/NewDelete.h"
-#include "Memory/Arena.h"
-#include "Memory/HeapArea.h"
-#include "Memory/LinearAllocator.h"
-#include "Memory/MallocAllocator.h"
+#include "memory/new_delete.h"
+#include "memory/Arena.h"
+#include "memory/HeapArea.h"
+#include "memory/LinearAllocator.h"
+#include "memory/MallocAllocator.h"
 
 //EXAMPLES:
 //STL::FalbackAllocator& someArena = fallbackAllocator();
