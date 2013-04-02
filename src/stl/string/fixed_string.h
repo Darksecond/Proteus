@@ -7,17 +7,17 @@
 namespace stl
 {
     template<size_t N>
-    class FixedString
+    class fixed_string
     {
         char _string[N];
         size_t _length;
     public:
-        inline FixedString() : _length(0)
+        inline fixed_string() : _length(0)
         {
             _string[0] = 0;
         }
         
-        explicit FixedString(const char* const str) : _length(strlen(str))
+        explicit fixed_string(const char* const str) : _length(strlen(str))
         {
             assert(_length < N);
             memcpy(_string, str, _length+1); //copy null byte as well
