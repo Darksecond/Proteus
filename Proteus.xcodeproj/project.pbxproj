@@ -908,6 +908,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "osx/Proteus/Proteus-Info.plist";
+				LLVM_LTO = NO;
 				PRODUCT_NAME = Proteus;
 				USER_HEADER_SEARCH_PATHS = src;
 				WRAPPER_EXTENSION = app;
@@ -921,6 +922,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "osx/Proteus/Proteus-Info.plist";
+				LLVM_LTO = NO;
 				PRODUCT_NAME = Proteus;
 				USER_HEADER_SEARCH_PATHS = src;
 				WRAPPER_EXTENSION = app;

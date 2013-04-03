@@ -11,6 +11,9 @@ namespace stl
         typedef uint64_t Type;
         
         constexpr string_hash(const char* str) : hash(hash::hash_fnv1a(str))
+#ifdef DEBUG
+        , original_string(str)
+#endif
         {
         }
         
@@ -19,7 +22,17 @@ namespace stl
             return hash;
         }
         
+#ifdef DEBUG
+        constexpr inline const char* string()
+        {
+            return original_string;
+        }
+#endif
+        
     private:
         const Type hash;
+#if DEBUG
+        const char* const original_string;
+#endif
     };
 };
