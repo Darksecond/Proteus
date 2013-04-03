@@ -1,0 +1,26 @@
+#pragma once
+
+#include "arena.h"
+
+namespace stl
+{
+    template <typename Allocator>
+    class simple_arena : public arena
+    {
+        Allocator* allocator;
+    public:
+        simple_arena(Allocator* alloc) : allocator(alloc)
+        {
+        }
+        
+        virtual void* allocate(const size_t size, const size_t align, const size_t alignment_offset, const source_info& info)
+        {
+            return allocator->allocate(size, align, alignment_offset);
+        }
+        
+        virtual void free(void* object, const source_info& info)
+        {
+            allocator->free(object);
+        }
+    };
+};

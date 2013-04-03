@@ -127,6 +127,7 @@
 
 /* Begin PBXFileReference section */
 		F642BDA516DF9063009EB1DB /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		F6617B91170C416F0027B4B4 /* simple_arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_arena.h; sourceTree = "<group>"; };
 		F687A40B16B4B63300878140 /* Proteus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proteus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F687A40F16B4B63300878140 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F687A41216B4B63300878140 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -522,6 +523,7 @@
 			children = (
 				F6A93B6F1704969800133628 /* new_delete.h */,
 				F6ED105917088C7000376288 /* arena.h */,
+				F6617B91170C416F0027B4B4 /* simple_arena.h */,
 				F6ED105A17088CD800376288 /* heap_area.h */,
 				F6ED105E17088EEB00376288 /* heap_area.cc */,
 				F6ED105B17088D0F00376288 /* linear_allocator.h */,

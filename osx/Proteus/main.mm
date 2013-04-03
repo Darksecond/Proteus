@@ -10,6 +10,7 @@
 #include "stl/string/string_hash.h"
 #include "stl/string/fixed_string.h"
 #include "stl/memory/linear_allocator.h"
+#include "stl/memory/simple_arena.h"
 
 static std::string ResourceDirectory()
 {
@@ -21,8 +22,9 @@ int main(int argc, char* argv[])
 {
     stl::heap_area area(64*1024*1024); //64 megabytes
     stl::linear_allocator alloc(area.start(), area.end());
-    int* a = P_NEW(alloc, int, 3);
-    P_DELETE(alloc, a);
+    stl::simple_arena<stl::linear_allocator> arena(&alloc);
+    int* a = P_NEW(arena, int, 3);
+    P_DELETE(arena, a);
     alloc.reset();
     
     std::cout << stl::hash::hash_fnv1a("test") << std::endl;

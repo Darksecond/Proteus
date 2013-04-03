@@ -7,7 +7,7 @@ stl::linear_allocator::linear_allocator(const void* start, const void* end) : _s
 {
 }
 
-void* stl::linear_allocator::allocate(const size_t size, const size_t alignment, const size_t alignment_offset, const stl::source_info& info)
+void* stl::linear_allocator::allocate(const size_t size, const size_t alignment, const size_t alignment_offset)
 {
     _current = (uint8_t*)memory_internals::align_forward(_current + alignment_offset, alignment) - alignment_offset;
     void* ptr = _current;
@@ -20,6 +20,6 @@ void* stl::linear_allocator::allocate(const size_t size, const size_t alignment,
     return ptr;
 }
 
-void stl::linear_allocator::free(void* object, const stl::source_info& info)
+void stl::linear_allocator::free(void* object)
 {
 }

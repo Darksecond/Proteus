@@ -31,23 +31,23 @@ namespace stl
         typedef bool_to_type<true> PODType;
         
         template<class A, typename T>
-        void delete_mem(A& alloc, T* object, const source_info& info)
+        void delete_mem(A& arena, T* object, const source_info& info)
         {
             if(object)
             {
                 object->~T();
-                alloc.free(object, info);
+                arena.free(object, info);
             }
         }
         
         template<typename T, class A>
-        T* new_array_mem(A& alloc, size_t count, const source_info& info, PODType)
+        T* new_array_mem(A& arena, size_t count, const source_info& info, PODType)
         {
-            return static_cast<T*>(alloc.allocate(sizeof(T) * count, alignof(T), 0, info));
+            return static_cast<T*>(arena.allocate(sizeof(T) * count, alignof(T), 0, info));
         }
         
         template<typename T, class A>
-        T* new_array_mem(A& alloc, size_t count, const source_info& info, NonPODType)
+        T* new_array_mem(A& arena, size_t count, const source_info& info, NonPODType)
         {
             union
             {
@@ -56,7 +56,7 @@ namespace stl
                 T* as_T;
             };
             
-            as_void = alloc.allocate( sizeof(T) * count + sizeof(size_t), alignof(T), sizeof(size_t) );
+            as_void = arena.allocate( sizeof(T) * count + sizeof(size_t), alignof(T), sizeof(size_t) );
             
             *as_size_t++ = count;
 
@@ -71,13 +71,13 @@ namespace stl
         }
         
         template<typename T, class A>
-        void delete_array_mem(A& alloc, T* ptr, const source_info& info, PODType)
+        void delete_array_mem(A& arena, T* ptr, const source_info& info, PODType)
         {
-            alloc.free(ptr, info);
+            arena.free(ptr, info);
         }
         
         template<typename T, class A>
-        void delete_array_mem(A& alloc, T* ptr, const source_info& info, NonPODType)
+        void delete_array_mem(A& arena, T* ptr, const source_info& info, NonPODType)
         {
             union
             {
@@ -92,7 +92,7 @@ namespace stl
             for(size_t i = count; i > 0; --i)
                 as_T[i-1].~T();
             
-            alloc.free(as_size_t-1, info);
+            arena.free(as_size_t-1, info);
         }
         
         template <typename T, class A>
