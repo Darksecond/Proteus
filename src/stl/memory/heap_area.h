@@ -22,7 +22,7 @@ namespace stl
         void release();
         
         inline void* start() { return _start; }
-        inline void* end() { return (uint8_t*)_start + _size; }
+        inline void* end() { return (uint8_t*)_start + _size - 1; }
         inline size_t size() { return _size; }
     };
 };
