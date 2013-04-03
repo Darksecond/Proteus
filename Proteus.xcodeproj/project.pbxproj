@@ -128,6 +128,7 @@
 /* Begin PBXFileReference section */
 		F642BDA516DF9063009EB1DB /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		F6617B91170C416F0027B4B4 /* simple_arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_arena.h; sourceTree = "<group>"; };
+		F6617B94170CCC5F0027B4B4 /* dynamic_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dynamic_array.h; sourceTree = "<group>"; };
 		F687A40B16B4B63300878140 /* Proteus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proteus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F687A40F16B4B63300878140 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F687A41216B4B63300878140 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -264,6 +265,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6617B92170CCC370027B4B4 /* containers */ = {
+			isa = PBXGroup;
+			children = (
+				F6617B94170CCC5F0027B4B4 /* dynamic_array.h */,
+			);
+			path = containers;
+			sourceTree = "<group>";
+		};
 		F687A40016B4B63300878140 = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +488,7 @@
 		F6A93B6E1704960000133628 /* stl */ = {
 			isa = PBXGroup;
 			children = (
+				F6617B92170CCC370027B4B4 /* containers */,
 				F6ED10631709B15500376288 /* string */,
 				F6ED105817088BC900376288 /* memory */,
 				F68FE4651705DF9100D95E6F /* memory.h */,

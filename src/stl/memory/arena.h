@@ -1,5 +1,8 @@
 #pragma once
 
+#include "stl/types.h"
+#include "stl/log.h"
+
 namespace stl
 {
     class arena

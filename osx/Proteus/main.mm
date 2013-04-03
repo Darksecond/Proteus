@@ -12,6 +12,8 @@
 #include "stl/memory/linear_allocator.h"
 #include "stl/memory/simple_arena.h"
 
+#include "stl/containers/dynamic_array.h"
+
 static std::string ResourceDirectory()
 {
     NSString* path = [[NSBundle mainBundle] resourcePath];
@@ -39,4 +41,18 @@ int main(int argc, char* argv[])
     fixed_string.append("some test string");
     fixed_string.append_fmt(" test: %i", 123);
     std::cout << fixed_string.c_str() << std::endl;
+    
+    stl::dynamic_array<int> dynamic_array(&arena, 23);
+    dynamic_array.add(12);
+    dynamic_array.add(9);
+    dynamic_array.add(10);
+    dynamic_array.add(79);
+    dynamic_array.erase(1);
+    std::cout << dynamic_array.size() << " " << dynamic_array.capacity() << " " << dynamic_array[1] << std::endl;
+    
+    std::cout << "elements in dynamic array:" << std::endl;
+    for(auto& i : dynamic_array)
+    {
+        std::cout << i << std::endl;
+    }
 }
