@@ -180,7 +180,7 @@
 		F687A51E16B4BABD00878140 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		F68FE4651705DF9100D95E6F /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
 		F68FE4681705F09400D95E6F /* hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
-		F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CodingStandard.rtf; sourceTree = "<group>"; };
+		F69CB80C16F6464000A6E7C4 /* coding_standard.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = coding_standard.rtf; sourceTree = "<group>"; };
 		F6A93B6F1704969800133628 /* new_delete.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = new_delete.h; sourceTree = "<group>"; };
 		F6A93B701704B6AE00133628 /* types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
 		F6A93B711704BA1400133628 /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
@@ -480,7 +480,7 @@
 		F69CB80B16F645A700A6E7C4 /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				F69CB80C16F6464000A6E7C4 /* CodingStandard.rtf */,
+				F69CB80C16F6464000A6E7C4 /* coding_standard.rtf */,
 			);
 			path = docs;
 			sourceTree = SOURCE_ROOT;
