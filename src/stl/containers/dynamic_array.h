@@ -27,7 +27,26 @@ namespace stl
         }
         
         //TODO copy constructor, operator=
-        //TODO move constructor, operator=
+        
+        dynamic_array(dynamic_array&& other) : _start(other._start), _end(other._end), _used_end(other._used_end)
+        {
+            other._start = nullptr;
+            other._end = nullptr;
+            other._used_end = nullptr;
+        }
+        
+        dynamic_array& operator=(dynamic_array&& other)
+        {
+            free();
+            
+            _start = other._start;
+            _end = other._end;
+            _used_end = other._used_end;
+            
+            other._start = nullptr;
+            other._end = nullptr;
+            other._used_end = nullptr;
+        }
         
         ~dynamic_array()
         {

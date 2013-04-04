@@ -42,6 +42,9 @@ int main(int argc, char* argv[])
     fixed_string.append_fmt(" test: %i", 123);
     std::cout << fixed_string.c_str() << std::endl;
     
+    stl::dynamic_array<int> test_array(&arena);
+    std::cout << test_array.size() << std::endl;
+    
     stl::dynamic_array<int> dynamic_array(&arena, 23);
     dynamic_array.add(12);
     dynamic_array.add(9);
