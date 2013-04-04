@@ -26,7 +26,8 @@ namespace stl
             reserve(initial_capacity);
         }
         
-        //TODO copy constructor, operator=
+        dynamic_array(dynamic_array&) = delete;
+        dynamic_array& operator=(dynamic_array&) = delete;
         
         dynamic_array(dynamic_array&& other) : _start(other._start), _end(other._end), _used_end(other._used_end)
         {
