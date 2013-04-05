@@ -5,6 +5,8 @@
 #include <GLFW/glfw.h>
 #include <string.h>
 
+#include "stl/logging/log.h"
+#include "stl/logging/console_logger.h"
 #include "stl/hash.h"
 #include "stl/memory.h"
 #include "stl/string/string_hash.h"
@@ -58,4 +60,9 @@ int main(int argc, char* argv[])
     {
         std::cout << i << std::endl;
     }
+    
+    
+    stl::console_logger console_logger;
+    stl::log::set_logger(&console_logger, 0);
+    P_LDEBUG("main", "Hello, World! %i", 123);
 }

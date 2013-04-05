@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F642BDA616DF9063009EB1DB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F642BDA516DF9063009EB1DB /* OpenAL.framework */; };
 		F6681E79170ED8CB004FE5CC /* log.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6681E78170ED8CB004FE5CC /* log.cc */; };
+		F6681E7D170F5B4C004FE5CC /* console_logger.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6681E7B170F5B4C004FE5CC /* console_logger.cc */; };
 		F687A41016B4B63300878140 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A40F16B4B63300878140 /* Cocoa.framework */; };
 		F687A42D16B4B68700878140 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = F687A42C16B4B68700878140 /* main.mm */; };
 		F687A43416B4B73B00878140 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A40F16B4B63300878140 /* Cocoa.framework */; };
@@ -131,6 +132,8 @@
 		F6617B91170C416F0027B4B4 /* simple_arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_arena.h; sourceTree = "<group>"; };
 		F6617B94170CCC5F0027B4B4 /* dynamic_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dynamic_array.h; sourceTree = "<group>"; };
 		F6681E78170ED8CB004FE5CC /* log.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cc; sourceTree = "<group>"; };
+		F6681E7B170F5B4C004FE5CC /* console_logger.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = console_logger.cc; sourceTree = "<group>"; };
+		F6681E7C170F5B4C004FE5CC /* console_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = console_logger.h; sourceTree = "<group>"; };
 		F687A40B16B4B63300878140 /* Proteus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proteus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F687A40F16B4B63300878140 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F687A41216B4B63300878140 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -273,6 +276,17 @@
 				F6617B94170CCC5F0027B4B4 /* dynamic_array.h */,
 			);
 			path = containers;
+			sourceTree = "<group>";
+		};
+		F6681E7A170F5AAB004FE5CC /* logging */ = {
+			isa = PBXGroup;
+			children = (
+				F6A93B711704BA1400133628 /* log.h */,
+				F6681E78170ED8CB004FE5CC /* log.cc */,
+				F6681E7C170F5B4C004FE5CC /* console_logger.h */,
+				F6681E7B170F5B4C004FE5CC /* console_logger.cc */,
+			);
+			path = logging;
 			sourceTree = "<group>";
 		};
 		F687A40016B4B63300878140 = {
@@ -495,8 +509,7 @@
 				F6ED105817088BC900376288 /* memory */,
 				F68FE4651705DF9100D95E6F /* memory.h */,
 				F6A93B701704B6AE00133628 /* types.h */,
-				F6A93B711704BA1400133628 /* log.h */,
-				F6681E78170ED8CB004FE5CC /* log.cc */,
+				F6681E7A170F5AAB004FE5CC /* logging */,
 				F68FE4681705F09400D95E6F /* hash.h */,
 			);
 			path = stl;
@@ -777,6 +790,7 @@
 				F6ED105F17088EEB00376288 /* heap_area.cc in Sources */,
 				F6ED106217088FAF00376288 /* malloc_allocator.cc in Sources */,
 				F6681E79170ED8CB004FE5CC /* log.cc in Sources */,
+				F6681E7D170F5B4C004FE5CC /* console_logger.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

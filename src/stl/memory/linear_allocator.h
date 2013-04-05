@@ -1,7 +1,7 @@
 #pragma once
 
 #include "types.h"
-#include "log.h"
+#include "stl/logging/log.h"
 
 namespace stl
 {

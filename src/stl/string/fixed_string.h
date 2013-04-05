@@ -3,9 +3,11 @@
 #include "types.h"
 #include <cassert>
 #include <cstdio>
+#include <string.h>
 
 namespace stl
 {
+    //TODO add << operator stuff
     template<size_t N>
     class fixed_string
     {
@@ -98,7 +100,19 @@ namespace stl
         {
             va_list formatters;
             va_start(formatters, format);
-            
+            append_fmt_v(format, formatters);
+            va_end(formatters);
+        }
+        
+        /**
+         * This will append a formatted string to the fixed_string.
+         * It will take in as many arguments as you supply in a printf style.
+         * If the end product formatted string does not fit it is clipped.
+         * When clipped, it will always end with a null byte so it is still a valid c_str.
+         * This is the va_list version of append_fmt
+         */
+        inline void append_fmt_v(const char* format, va_list formatters)
+        {
             const int chars_written = vsnprintf(_string + _length, N - _length, format, formatters);
             if(chars_written < 0)
             {
@@ -109,8 +123,6 @@ namespace stl
             {
                 _length += chars_written;
             }
-            
-            va_end(formatters);
         }
     };
 }
