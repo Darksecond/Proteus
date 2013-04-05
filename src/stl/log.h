@@ -11,9 +11,12 @@ namespace stl
         const int line;
     };
     
+    class Logger;
+    
     namespace log
     {
-        //addWriter(...)
+        void set_logger(Logger* logger, int i);
+        
         //debug(...)
         //info(...)
         //warning(...)
