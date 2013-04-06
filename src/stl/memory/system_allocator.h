@@ -5,7 +5,7 @@
 
 namespace stl
 {
-    class malloc_allocator
+    class system_allocator
     {
     public:
         //address+offset should be aligned, NOT address itself
