@@ -3,6 +3,8 @@
 #include "stl/memory/arena.h"
 
 #include <cassert>
+#include <utility>
+#include <new>
 
 namespace stl
 {
@@ -17,11 +19,11 @@ namespace stl
         typedef T* iterator;
         typedef const T* const_iterator;
         
-        dynamic_array(arena* a) : _arena(a), _start(nullptr), _end(nullptr), _used_end(nullptr)
+        explicit inline dynamic_array(arena* a) : _arena(a), _start(nullptr), _end(nullptr), _used_end(nullptr)
         {
         }
         
-        dynamic_array(arena* a, size_t initial_capacity) : _arena(a), _start(nullptr), _end(nullptr), _used_end(nullptr)
+        inline dynamic_array(arena* a, const size_t initial_capacity) : _arena(a), _start(nullptr), _end(nullptr), _used_end(nullptr)
         {
             reserve(initial_capacity);
         }
@@ -118,6 +120,15 @@ namespace stl
             ++_used_end;
         }
         
+        void add(T&& item)
+        {
+            assert(_start != nullptr); //cannot be free-ed
+            assert(_end != _used_end); //cannot be full
+            
+            new (_used_end) T(item); //TODO move to new_delete.h as construct function
+            ++_used_end;
+        }
+        
         T* data()
         {
             return _start;
@@ -163,7 +174,7 @@ namespace stl
          * Erases element i by moving the last element into it's place.
          * This will _not_ keep the array order!
          */
-        void erase(size_t i)
+        inline void erase(size_t i)
         {
             assert(_start + i < _used_end); //cannot delete outside of used range
             
@@ -188,6 +199,18 @@ namespace stl
         void erase(const_iterator it)
         {
             erase(it - _start);
+        }
+        
+        void erase(const T& element)
+        {
+            for(size_t i = 0; i < size(); ++i)
+            {
+                if(_start[i] == element)
+                {
+                    erase(i);
+                    return;
+                }
+            }
         }
     };
 };

@@ -1,9 +1,10 @@
 #pragma once
 
-#include <type_traits>
-
 #include "types.h"
 #include "stl/logging/log.h"
+
+#include <type_traits>
+#include <new>
 
 #define P_NEW(arena, type, ...) (new ((arena).allocate(sizeof(type), alignof(type), 0, P_SOURCEINFO)) type(__VA_ARGS__))
 

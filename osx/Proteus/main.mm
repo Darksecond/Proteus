@@ -16,6 +16,8 @@
 
 #include "stl/containers/dynamic_array.h"
 
+#include "stl/filesystem/root.h"
+
 static std::string ResourceDirectory()
 {
     NSString* path = [[NSBundle mainBundle] resourcePath];
@@ -64,4 +66,6 @@ int main(int argc, char* argv[])
     stl::console_logger console_logger;
     stl::log::set_logger(&console_logger, 0);
     P_LDEBUG("main", "Hello, World! %i", 123);
+    
+    stl::root root(&arena, 8);
 }
