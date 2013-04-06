@@ -61,7 +61,6 @@ int main(int argc, char* argv[])
         std::cout << i << std::endl;
     }
     
-    
     stl::console_logger console_logger;
     stl::log::set_logger(&console_logger, 0);
     P_LDEBUG("main", "Hello, World! %i", 123);
