@@ -7,6 +7,7 @@ namespace stl
 {
     class archive;
     class arena;
+    class file;
     
     class root
     {
@@ -17,7 +18,7 @@ namespace stl
         void mount(archive*);
         void unmount(archive*);
         
-        //File* open(path, mode);
-        //void close(path);
+        file* open(const char* path, int mode);
+        void close(file* file);
     };
 };
