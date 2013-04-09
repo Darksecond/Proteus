@@ -1,5 +1,7 @@
 #pragma once
 
+#include "stl/types.h"
+
 namespace stl
 {
     class archive;
@@ -7,6 +9,21 @@ namespace stl
     class file
     {
     public:
-        archive* archive; //move this to private?
+        archive* archive; //move this to private with friend or getters/setters?
+        
+        //read, errors, buffers, buffer size?
+        //write
+        
+        //async_read
+        //async_write
+        
+        //streaming stuff?
+        
+        //seek
+        //skip
+        
+        //eof
+        
+        //total_size
     };
 };

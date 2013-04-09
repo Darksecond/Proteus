@@ -73,8 +73,6 @@
 		F6BEF09416E5EEA100ACEDC5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F642BDA516DF9063009EB1DB /* OpenAL.framework */; };
 		F6BEF09516E612B900ACEDC5 /* ALUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BEF06A16E5EDEF00ACEDC5 /* ALUT.framework */; };
 		F6D1EA371710C67E00906822 /* root.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6D1EA351710C67E00906822 /* root.cc */; };
-		F6D1EA3A1712B9D000906822 /* archive.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6D1EA381712B9D000906822 /* archive.cc */; };
-		F6D1EA3D1712BA4A00906822 /* file.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6D1EA3B1712BA4A00906822 /* file.cc */; };
 		F6E3E49616B5508B00BFAC05 /* copying.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49516B5508B00BFAC05 /* copying.txt */; };
 		F6E3E49916B550B300BFAC05 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49816B550B300BFAC05 /* LICENSE.txt */; };
 		F6E3E49B16B550DE00BFAC05 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6E3E49A16B550DE00BFAC05 /* COPYING.txt */; };
@@ -208,9 +206,7 @@
 		F6BEF09216E5EE9900ACEDC5 /* alut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alut.h; sourceTree = "<group>"; };
 		F6D1EA351710C67E00906822 /* root.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = root.cc; sourceTree = "<group>"; };
 		F6D1EA361710C67E00906822 /* root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = root.h; sourceTree = "<group>"; };
-		F6D1EA381712B9D000906822 /* archive.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = archive.cc; sourceTree = "<group>"; };
 		F6D1EA391712B9D000906822 /* archive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = archive.h; sourceTree = "<group>"; };
-		F6D1EA3B1712BA4A00906822 /* file.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file.cc; sourceTree = "<group>"; };
 		F6D1EA3C1712BA4A00906822 /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
 		F6E3E49516B5508B00BFAC05 /* copying.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copying.txt; sourceTree = "<group>"; };
 		F6E3E49816B550B300BFAC05 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -560,9 +556,7 @@
 				F6D1EA361710C67E00906822 /* root.h */,
 				F6D1EA351710C67E00906822 /* root.cc */,
 				F6D1EA391712B9D000906822 /* archive.h */,
-				F6D1EA381712B9D000906822 /* archive.cc */,
 				F6D1EA3C1712BA4A00906822 /* file.h */,
-				F6D1EA3B1712BA4A00906822 /* file.cc */,
 			);
 			path = filesystem;
 			sourceTree = "<group>";
@@ -815,8 +809,6 @@
 				F6681E79170ED8CB004FE5CC /* log.cc in Sources */,
 				F6681E7D170F5B4C004FE5CC /* console_logger.cc in Sources */,
 				F6D1EA371710C67E00906822 /* root.cc in Sources */,
-				F6D1EA3A1712B9D000906822 /* archive.cc in Sources */,
-				F6D1EA3D1712BA4A00906822 /* file.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

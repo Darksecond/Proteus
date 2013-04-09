@@ -3,6 +3,8 @@
 #include "archive.h"
 #include "file.h"
 
+#include <cassert>
+
 stl::root::root(arena* arena, int capacity) : _mounts(arena, capacity)
 {
 }
@@ -19,8 +21,6 @@ void stl::root::unmount(archive* archive)
 
 stl::file* stl::root::open(const char* path, int mode)
 {
-    //TODO
-    //loop through archives
     file* retval = nullptr;
     for(archive* mount : _mounts)
     {
@@ -33,6 +33,7 @@ stl::file* stl::root::open(const char* path, int mode)
 
 void stl::root::close(file* file)
 {
-    //TODO
+    assert(file->archive); //archive should not be a nullptr!
+    
     file->archive->close(file);
 }

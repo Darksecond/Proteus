@@ -7,7 +7,7 @@ namespace stl
     class archive
     {
     public:
-        file* open(const char* path, int mode);
-        void close(file* file);
+        virtual file* open(const char* path, int mode) = 0;
+        virtual void close(file* file) = 0;
     };
 };
