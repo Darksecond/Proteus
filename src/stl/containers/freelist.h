@@ -29,7 +29,7 @@ namespace stl
     
     inline void freelist::push(void* ptr)
     {
-        //TODO assert ptr not null
+        assert(ptr);
         
         freelist* head = static_cast<freelist*>(ptr);
         head->next = next;
