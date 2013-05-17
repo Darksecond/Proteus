@@ -208,6 +208,7 @@
 		F6D1EA361710C67E00906822 /* root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = root.h; sourceTree = "<group>"; };
 		F6D1EA391712B9D000906822 /* archive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = archive.h; sourceTree = "<group>"; };
 		F6D1EA3C1712BA4A00906822 /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		F6DBE759174681E800C7FFD8 /* freelist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = freelist.h; sourceTree = "<group>"; };
 		F6E3E49516B5508B00BFAC05 /* copying.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copying.txt; sourceTree = "<group>"; };
 		F6E3E49816B550B300BFAC05 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		F6E3E49A16B550DE00BFAC05 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				F6617B94170CCC5F0027B4B4 /* dynamic_array.h */,
+				F6DBE759174681E800C7FFD8 /* freelist.h */,
 			);
 			path = containers;
 			sourceTree = "<group>";
