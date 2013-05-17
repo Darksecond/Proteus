@@ -4,12 +4,10 @@
 
 namespace stl
 {
-    class archive;
-    
     class file
     {
     public:
-        archive* archive; //move this to private with friend or getters/setters?
+        virtual void close() = 0;
         
         //read, errors, buffers, buffer size?
         //write

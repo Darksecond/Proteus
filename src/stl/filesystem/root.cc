@@ -33,7 +33,5 @@ stl::file* stl::root::open(const char* path, int mode)
 
 void stl::root::close(file* file)
 {
-    assert(file->archive); //archive should not be a nullptr!
-    
-    file->archive->close(file);
+    file->close();
 }
