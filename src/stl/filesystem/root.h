@@ -18,6 +18,7 @@ namespace stl
         void mount(archive*);
         void unmount(archive*);
         
+        //TODO: replace int mode with something better
         /**
          * Open a file with path and mode.
          * Returns a nullptr if the file does not exist.
@@ -26,7 +27,6 @@ namespace stl
         
         /**
          * Close a previously opened with 'open'.
-         * This also deletes the file.
          */
         void close(file* file);
     };

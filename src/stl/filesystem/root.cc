@@ -33,6 +33,7 @@ stl::file* stl::root::open(const char* path, int mode)
 
 void stl::root::close(file* file)
 {
-    file->close();
-    delete file;
+    assert(file);
+    
+    file->owner()->close(file);
 }

@@ -17,6 +17,9 @@
 #include "stl/containers/dynamic_array.h"
 
 #include "stl/filesystem/root.h"
+#include "stl/filesystem/fs_archive.h"
+#include "stl/filesystem/file.h"
+#include "stl/filesystem/modes.h"
 
 static std::string ResourceDirectory()
 {
@@ -68,4 +71,9 @@ int main(int argc, char* argv[])
     P_LDEBUG("main", "Hello, World! %i", 123);
     
     stl::root root(&arena, 8);
+    stl::fs_archive fsa(&arena);
+    root.mount(&fsa);
+    stl::file* test_file = root.open("/etc/hosts", stl::fs_modes::in);
+    std::cout << test_file->total_size() << std::endl;
+    root.close(test_file);
 }

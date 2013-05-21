@@ -4,17 +4,20 @@
 
 namespace stl
 {
+    class archive;
+    
     class file
     {
+        archive* _owner;
     public:
-        virtual ~file() {}
+        file(archive* owner) : _owner(owner)
+        {
+        }
         
-        /**
-         * Close the file so it can be safely deleted.
-         */
-        virtual void close() = 0;
+        virtual ~file()
+        {
+        }
         
-        //read, errors, buffers, buffer size?
         /**
          * Read into buffer for a maximum of buf_size bytes.
          * Returns the amount of bytes read.
@@ -30,7 +33,12 @@ namespace stl
         //streaming stuff?
         
         virtual void skip(size_t amount) = 0;
-        virtual bool eof() = 0;
-        virtual size_t total_size() = 0; //or get_remaining_bytes
+        virtual bool eof() const = 0; //or get_remaining_bytes
+        virtual size_t total_size() = 0;
+        
+        archive* owner() const
+        {
+            return _owner;
+        }
     };
 };
