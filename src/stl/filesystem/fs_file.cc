@@ -4,6 +4,7 @@
 
 stl::fs_file::fs_file(const char* path, int mode, archive* owner) : stl::file(owner)
 {
+    //TODO: cannot set an ifstream to out mode!
     std::ios_base::openmode f_mode = std::ios_base::binary;
     if(mode & fs_modes::in)
         f_mode = f_mode | std::ios_base::in;

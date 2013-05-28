@@ -71,9 +71,9 @@ int main(int argc, char* argv[])
     P_LDEBUG("main", "Hello, World! %i", 123);
     
     stl::root root(&arena, 8);
-    stl::fs_archive fsa(&arena);
+    stl::fs_archive fsa("/etc", &arena);
     root.mount(&fsa);
-    stl::file* test_file = root.open("/etc/hosts", stl::fs_modes::in);
-    std::cout << test_file->total_size() << std::endl;
+    stl::file* test_file = root.open("hosts", stl::fs_modes::in);
+    std::cout << "Test file size: " << test_file->total_size() << std::endl;
     root.close(test_file);
 }
