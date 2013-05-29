@@ -215,6 +215,8 @@
 		F6D1EA361710C67E00906822 /* root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = root.h; sourceTree = "<group>"; };
 		F6D1EA391712B9D000906822 /* archive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = archive.h; sourceTree = "<group>"; };
 		F6D1EA3C1712BA4A00906822 /* file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = file.h; sourceTree = "<group>"; };
+		F6DB2727175682F900908291 /* library.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = library.h; sourceTree = "<group>"; };
+		F6DB27281756858E00908291 /* resource_id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = resource_id.h; sourceTree = "<group>"; };
 		F6DBE759174681E800C7FFD8 /* freelist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = freelist.h; sourceTree = "<group>"; };
 		F6E3E49516B5508B00BFAC05 /* copying.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copying.txt; sourceTree = "<group>"; };
 		F6E3E49816B550B300BFAC05 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		F687A52E16B4BC7700878140 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F6DB2726175682EF00908291 /* libraries */,
 				F6A93B6E1704960000133628 /* stl */,
 			);
 			path = src;
@@ -573,6 +576,15 @@
 				F6935ECD174B891900776F1E /* modes.h */,
 			);
 			path = filesystem;
+			sourceTree = "<group>";
+		};
+		F6DB2726175682EF00908291 /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F6DB2727175682F900908291 /* library.h */,
+				F6DB27281756858E00908291 /* resource_id.h */,
+			);
+			name = libraries;
 			sourceTree = "<group>";
 		};
 		F6ED105817088BC900376288 /* memory */ = {
