@@ -17,6 +17,13 @@ namespace stl
         {
         }
         
+        explicit constexpr string_hash(Type h) : hash(h)
+#ifdef DEBUG
+        , original_string(nullptr)
+#endif
+        {
+        }
+        
         constexpr inline operator Type() const
         {
             return hash;
