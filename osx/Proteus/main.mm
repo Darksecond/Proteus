@@ -21,6 +21,8 @@
 #include "stl/filesystem/file.h"
 #include "stl/filesystem/modes.h"
 
+#include "library.h"
+
 static std::string ResourceDirectory()
 {
     NSString* path = [[NSBundle mainBundle] resourcePath];
@@ -76,4 +78,8 @@ int main(int argc, char* argv[])
     stl::file* test_file = root.open("hosts", stl::fs_modes::in);
     std::cout << "Test file size: " << test_file->total_size() << std::endl;
     root.close(test_file);
+    
+    resource_id r_id{"test", "asdf"};
+    std::cout << r_id.name << " " << r_id.name.string() << std::endl;
+    std::cout << r_id.type << " " << r_id.type.string() << std::endl;
 }
