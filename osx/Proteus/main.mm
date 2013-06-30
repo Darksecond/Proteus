@@ -21,12 +21,19 @@
 #include "stl/filesystem/file.h"
 #include "stl/filesystem/modes.h"
 
-#include "library.h"
+#include "stl/threading/thread.h"
 
 static std::string ResourceDirectory()
 {
     NSString* path = [[NSBundle mainBundle] resourcePath];
     return std::string([path cStringUsingEncoding:NSUTF8StringEncoding]);
+}
+
+void test_thread_function(const stl::thread&)
+{
+    int i;
+    i = 3;
+    std::cout << "test" << std::endl;
 }
 
 int main(int argc, char* argv[])
@@ -79,7 +86,7 @@ int main(int argc, char* argv[])
     std::cout << "Test file size: " << test_file->total_size() << std::endl;
     root.close(test_file);
     
-    resource_id r_id{"test", "asdf"};
-    std::cout << r_id.name << " " << r_id.name.string() << std::endl;
-    std::cout << r_id.type << " " << r_id.type.string() << std::endl;
+    stl::thread t;
+    t.create("test", &test_thread_function);
+    t.join();
 }
