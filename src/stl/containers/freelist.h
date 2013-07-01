@@ -7,6 +7,7 @@ namespace stl
         freelist* next;
     public:
         inline freelist();
+        inline freelist(void* start, void* end, size_t element_size);
         
         inline void* pop();
         inline void push(void* ptr);
@@ -14,6 +15,33 @@ namespace stl
     
     inline freelist::freelist() : next(nullptr)
     {
+    }
+    
+    inline freelist::freelist(void* start, void* end, size_t element_size) : next(nullptr)
+    {
+        union
+        {
+            void* as_void;
+            char* as_char;
+            freelist* as_freelist;
+        };
+        
+        as_void = start;
+        next = as_freelist;
+        
+        const size_t element_count = (static_cast<char*>(end) - as_char) / element_size;
+        
+        as_char += element_size;
+        
+        //initialize freelist chain
+        freelist* runner = next;
+        for(size_t i = 1; i < element_count; ++i)
+        {
+            runner->next = as_freelist;
+            runner = runner->next;
+            
+            as_char += element_size;
+        }
     }
     
     inline void* freelist::pop()

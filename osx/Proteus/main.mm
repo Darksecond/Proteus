@@ -15,6 +15,7 @@
 #include "stl/memory/simple_arena.h"
 
 #include "stl/containers/dynamic_array.h"
+#include "stl/containers/freelist.h"
 
 #include "stl/filesystem/root.h"
 #include "stl/filesystem/fs_archive.h"
@@ -90,4 +91,11 @@ int main(int argc, char* argv[])
     stl::thread t;
     t.create("test", &test_thread_function);
     t.join();
+    
+    char* f_list_array = P_NEW(arena, char, 1024);
+    stl::freelist f(f_list_array, f_list_array+1024, 16);
+    void* f_addr1 = f.pop();
+    void* f_addr2 = f.pop();
+    P_LDEBUG("freelist", "faddr1: 0x%x, should be: 0x%x", f_addr1, f_list_array);
+    P_LDEBUG("freelist", "faddr2: 0x%x, should be: 0x%x", f_addr2, f_list_array+16);
 }
