@@ -22,6 +22,7 @@
 #include "stl/filesystem/modes.h"
 
 #include "stl/threading/thread.h"
+#include "stl/threading/thread_local_storage.h"
 
 static std::string ResourceDirectory()
 {

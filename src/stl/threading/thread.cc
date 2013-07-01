@@ -49,6 +49,11 @@ bool thread::should_stop() const
     return _state == state_t::SHOULD_STOP;
 }
 
+bool thread::continue_running() const
+{
+    return !should_stop();
+}
+
 bool thread::is_stopped() const
 {
     return _state == state_t::STOPPED;
