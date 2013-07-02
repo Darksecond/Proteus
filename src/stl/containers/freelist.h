@@ -19,6 +19,8 @@ namespace stl
     
     inline freelist::freelist(void* start, void* end, size_t element_size) : next(nullptr)
     {
+        assert(element_size >= sizeof(freelist*));
+        
         union
         {
             void* as_void;

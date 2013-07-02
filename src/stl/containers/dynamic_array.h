@@ -21,10 +21,13 @@ namespace stl
         
         explicit inline dynamic_array(arena* a) : _arena(a), _start(nullptr), _end(nullptr), _used_end(nullptr)
         {
+            assert(a != nullptr);
         }
         
         inline dynamic_array(arena* a, const size_t initial_capacity) : _arena(a), _start(nullptr), _end(nullptr), _used_end(nullptr)
         {
+            assert(a != nullptr);
+            
             reserve(initial_capacity);
         }
         

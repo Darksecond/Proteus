@@ -2,6 +2,8 @@
 
 #include "arena.h"
 
+#include <cassert>
+
 namespace stl
 {
     template <typename Allocator>
@@ -11,6 +13,7 @@ namespace stl
     public:
         simple_arena(Allocator* alloc) : allocator(alloc)
         {
+            assert(alloc != nullptr);
         }
         
         virtual void* allocate(const size_t size, const size_t align, const size_t alignment_offset, const source_info& info)

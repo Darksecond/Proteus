@@ -98,4 +98,5 @@ int main(int argc, char* argv[])
     void* f_addr2 = f.pop();
     P_LDEBUG("freelist", "faddr1: 0x%x, should be: 0x%x", f_addr1, f_list_array);
     P_LDEBUG("freelist", "faddr2: 0x%x, should be: 0x%x", f_addr2, f_list_array+16);
+    P_DELETE(arena, f_list_array);
 }

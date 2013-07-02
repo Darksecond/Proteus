@@ -16,6 +16,9 @@ thread::~thread()
 
 void thread::create(const char* name, function f)
 {
+    assert(name != nullptr);
+    assert(f != nullptr);
+    
     _function = f;
     _name = name;
     int rc = pthread_create(&_thread, nullptr, &thread_main_function, this);
