@@ -25,6 +25,8 @@
 #include "stl/threading/thread.h"
 #include "stl/threading/thread_local_storage.h"
 
+#include "stl/time/hf_timer.h"
+
 static std::string ResourceDirectory()
 {
     NSString* path = [[NSBundle mainBundle] resourcePath];
@@ -99,4 +101,11 @@ int main(int argc, char* argv[])
     P_LDEBUG("freelist", "faddr1: 0x%x, should be: 0x%x", f_addr1, f_list_array);
     P_LDEBUG("freelist", "faddr2: 0x%x, should be: 0x%x", f_addr2, f_list_array+16);
     P_DELETE(arena, f_list_array);
+    
+    stl::hf_timer timer;
+    timer.start();
+    sleep(1);
+    double end = timer.get_seconds();
+    std::cout << "elapsed: " << end << std::endl;
+    
 }
