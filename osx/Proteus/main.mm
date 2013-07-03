@@ -16,6 +16,7 @@
 
 #include "stl/containers/dynamic_array.h"
 #include "stl/containers/freelist.h"
+#include "stl/containers/fixed_array.h"
 
 #include "stl/filesystem/root.h"
 #include "stl/filesystem/fs_archive.h"

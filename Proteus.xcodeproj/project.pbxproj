@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F642BDA616DF9063009EB1DB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F642BDA516DF9063009EB1DB /* OpenAL.framework */; };
 		F64C34A5178062AC000543F2 /* thread.cc in Sources */ = {isa = PBXBuildFile; fileRef = F64C34A3178062AC000543F2 /* thread.cc */; };
+		F660562917841771001D4483 /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F660562817841771001D4483 /* todo.rtf */; };
 		F6681E79170ED8CB004FE5CC /* log.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6681E78170ED8CB004FE5CC /* log.cc */; };
 		F6681E7D170F5B4C004FE5CC /* console_logger.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6681E7B170F5B4C004FE5CC /* console_logger.cc */; };
 		F687A41016B4B63300878140 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F687A40F16B4B63300878140 /* Cocoa.framework */; };
@@ -138,6 +139,8 @@
 		F642BDA516DF9063009EB1DB /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		F64C34A3178062AC000543F2 /* thread.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thread.cc; sourceTree = "<group>"; };
 		F64C34A4178062AC000543F2 /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread.h; sourceTree = "<group>"; };
+		F660562817841771001D4483 /* todo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
+		F660562B17846B98001D4483 /* fixed_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixed_array.h; sourceTree = "<group>"; };
 		F6617B91170C416F0027B4B4 /* simple_arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_arena.h; sourceTree = "<group>"; };
 		F6617B94170CCC5F0027B4B4 /* dynamic_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dynamic_array.h; sourceTree = "<group>"; };
 		F6681E78170ED8CB004FE5CC /* log.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log.cc; sourceTree = "<group>"; };
@@ -316,6 +319,7 @@
 			children = (
 				F6617B94170CCC5F0027B4B4 /* dynamic_array.h */,
 				F6DBE759174681E800C7FFD8 /* freelist.h */,
+				F660562B17846B98001D4483 /* fixed_array.h */,
 			);
 			path = containers;
 			sourceTree = "<group>";
@@ -539,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				F69CB80C16F6464000A6E7C4 /* coding_standard.rtf */,
+				F660562817841771001D4483 /* todo.rtf */,
 			);
 			path = docs;
 			sourceTree = SOURCE_ROOT;
@@ -815,6 +820,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F660562917841771001D4483 /* todo.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
