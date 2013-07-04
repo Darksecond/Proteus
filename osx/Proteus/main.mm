@@ -2,7 +2,6 @@
 
 #include <string>
 #include <iostream>
-#include <GLFW/glfw.h>
 #include <string.h>
 
 #include "stl/logging/log.h"
@@ -28,6 +27,9 @@
 
 #include "stl/time/hf_timer.h"
 
+#include "graphics/backend/opengl.h"
+#include "graphics/backend/buffer_objects.h"
+
 static std::string ResourceDirectory()
 {
     NSString* path = [[NSBundle mainBundle] resourcePath];
@@ -39,6 +41,33 @@ void test_thread_function(const stl::thread&)
     int i;
     i = 3;
     std::cout << "test" << std::endl;
+}
+
+void init_opengl()
+{
+    if(!glfwInit())
+        throw std::runtime_error("glfwInit failed");
+    
+    glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
+    glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 2);
+    glfwOpenWindowHint(GLFW_WINDOW_NO_RESIZE, GL_TRUE);
+    
+    if(!glfwOpenWindow(800, 600, 8, 8, 8, 8, 16, 0, GLFW_WINDOW))
+        assert(!"glfwOpenWindow failed. Can your hardware handle OpenGL 3.2?");
+    
+    glewExperimental = GL_TRUE; //stops glew crashing on OSX
+    if(glewInit() != GLEW_OK)
+        assert(!"glewInit failed");
+    glGetError(); //ignore any errors coming from glewInit, because they can be safely ignored.
+
+    std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+    std::cout << "GLSL version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
+    std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
+    std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
+
+    if(!GLEW_VERSION_3_2)
+        assert(!"OpenGL 3.2 API is not available.");
 }
 
 int main(int argc, char* argv[])
@@ -109,4 +138,25 @@ int main(int argc, char* argv[])
     double end = timer.get_seconds();
     std::cout << "elapsed: " << end << std::endl;
     
+    stl::fixed_array<int, 16> fa;
+    fa[0] = 3;
+    std::cout << fa[0] << std::endl;
+    
+    init_opengl();
+    
+    int test_vbo_data[4096];
+    auto handle = graphics::backend::create_vertex_buffer(4096, &test_vbo_data);
+    graphics::backend::destroy_vertex_buffer(handle);
+    handle = graphics::backend::create_vertex_buffer(4096, &test_vbo_data);
+    std::cout << handle.index << "," << handle.generation << std::endl;
+    graphics::backend::destroy_vertex_buffer(handle);
+    
+    GLenum error = glGetError();
+    if(error != GL_NO_ERROR)
+        std::cerr << "OpenGL Error " << error << ": " << (const char*)gluErrorString(error) << std::endl;
+    
+    auto ihandle = graphics::backend::create_index_buffer(16, graphics::backend::index_format::UINT, &test_vbo_data);
+    graphics::backend::destroy_index_buffer(ihandle);
+    
+    glfwTerminate();
 }
