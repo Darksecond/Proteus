@@ -24,6 +24,12 @@ namespace stl
          */
         virtual size_t read(void* buffer, size_t buf_size) = 0;
         
+        template <typename T>
+        inline size_t read(T& object)
+        {
+            return read(&object, sizeof(T));
+        }
+        
         //virtual size_t write(const void* buffer, size_t buf_size) = 0;
         //write
         

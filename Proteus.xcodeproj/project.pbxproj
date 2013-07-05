@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F642BDA616DF9063009EB1DB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F642BDA516DF9063009EB1DB /* OpenAL.framework */; };
 		F64C34A5178062AC000543F2 /* thread.cc in Sources */ = {isa = PBXBuildFile; fileRef = F64C34A3178062AC000543F2 /* thread.cc */; };
+		F65F19201786F43E002483E4 /* mesh_library.cc in Sources */ = {isa = PBXBuildFile; fileRef = F65F191E1786F43E002483E4 /* mesh_library.cc */; };
 		F660562917841771001D4483 /* todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F660562817841771001D4483 /* todo.rtf */; };
 		F6681E79170ED8CB004FE5CC /* log.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6681E78170ED8CB004FE5CC /* log.cc */; };
 		F6681E7D170F5B4C004FE5CC /* console_logger.cc in Sources */ = {isa = PBXBuildFile; fileRef = F6681E7B170F5B4C004FE5CC /* console_logger.cc */; };
@@ -140,6 +141,8 @@
 		F642BDA516DF9063009EB1DB /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		F64C34A3178062AC000543F2 /* thread.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thread.cc; sourceTree = "<group>"; };
 		F64C34A4178062AC000543F2 /* thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thread.h; sourceTree = "<group>"; };
+		F65F191E1786F43E002483E4 /* mesh_library.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mesh_library.cc; sourceTree = "<group>"; };
+		F65F191F1786F43E002483E4 /* mesh_library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mesh_library.h; sourceTree = "<group>"; };
 		F660562817841771001D4483 /* todo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = todo.rtf; sourceTree = "<group>"; };
 		F660562B17846B98001D4483 /* fixed_array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fixed_array.h; sourceTree = "<group>"; };
 		F6617B91170C416F0027B4B4 /* simple_arena.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_arena.h; sourceTree = "<group>"; };
@@ -539,6 +542,7 @@
 		F687A52E16B4BC7700878140 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F6EFC44917858B2800964271 /* backend */,
 				F6EFC44D17858D2200964271 /* util */,
 				F6EFC44517858AC500964271 /* graphics */,
 				F6A93B6E1704960000133628 /* stl */,
@@ -646,7 +650,8 @@
 		F6EFC44517858AC500964271 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
-				F6EFC44917858B2800964271 /* backend */,
+				F65F191E1786F43E002483E4 /* mesh_library.cc */,
+				F65F191F1786F43E002483E4 /* mesh_library.h */,
 			);
 			path = graphics;
 			sourceTree = "<group>";
@@ -909,6 +914,7 @@
 				F6AB0F55178187F200404892 /* condition_variable.cc in Sources */,
 				F6FBDEF5178302A800BEEB11 /* hf_timer.cc in Sources */,
 				F6EFC44C17858B7800964271 /* buffer_objects.cc in Sources */,
+				F65F19201786F43E002483E4 /* mesh_library.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

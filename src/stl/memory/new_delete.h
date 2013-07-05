@@ -12,7 +12,9 @@
 
 #define P_NEW_ARRAY(arena, type) stl::memory_internals::new_array_mem<stl::type_and_count<type>::Type>(arena, stl::type_and_count<type>::Count, P_SOURCEINFO, stl::bool_to_type<std::is_pod<stl::type_and_count<type>::Type>::value>())
 
-#define P_DELETE_ARRAY(arena, ptr) stl::memory_internals::delete_array_pointer(arena, ptr, P_SOURCEINFO);
+#define P_NEW_ARRAY_WITH_COUNT(arena, type, count) stl::memory_internals::new_array_mem<type>(arena, count, P_SOURCEINFO, stl::bool_to_type<std::is_pod<stl::type_and_count<type>::Type>::value>())
+
+#define P_DELETE_ARRAY(arena, ptr) stl::memory_internals::delete_array_mem(arena, ptr, P_SOURCEINFO);
 
 namespace stl
 {

@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * \brief include opengl libraries, different GLFW and GLEW paths are used depending on the platform.
+ */
+
 #include "stl/platform.h"
 
 #ifdef P_PLATFORM_APPLE

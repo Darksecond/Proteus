@@ -6,8 +6,6 @@
 
 #include <cassert>
 
-using namespace graphics;
-
 static constexpr int _vertex_buffer_amount = 4096;
 static constexpr int _index_buffer_amount = 4096;
 
@@ -40,12 +38,11 @@ backend::vertex_buffer_handle backend::create_vertex_buffer(uint32_t size, const
 
 void backend::destroy_vertex_buffer(vertex_buffer_handle handle)
 {
-    if(handle.generation == _vertex_buffer_generations[handle.index])
-    {
-        glDeleteBuffers(1, &_vertex_buffers[handle.index]);
-        _vertex_buffers[handle.index] = 0;
-        ++_vertex_buffer_generations[handle.index];
-    }
+    assert(handle.generation == _vertex_buffer_generations[handle.index]);
+    
+    glDeleteBuffers(1, &_vertex_buffers[handle.index]);
+    _vertex_buffers[handle.index] = 0;
+    ++_vertex_buffer_generations[handle.index];
 }
 
 backend::index_buffer_handle backend::create_index_buffer(uint32_t count, index_format format, const void* data)
@@ -71,10 +68,9 @@ backend::index_buffer_handle backend::create_index_buffer(uint32_t count, index_
 
 void backend::destroy_index_buffer(index_buffer_handle handle)
 {
-    if(handle.generation == _index_buffer_generations[handle.index])
-    {
-        glDeleteBuffers(1, &_index_buffers[handle.index]);
-        _index_buffers[handle.index] = 0;
-        ++_index_buffer_generations[handle.index];
-    }
+    assert(handle.generation == _index_buffer_generations[handle.index]);
+    
+    glDeleteBuffers(1, &_index_buffers[handle.index]);
+    _index_buffers[handle.index] = 0;
+    ++_index_buffer_generations[handle.index];
 }

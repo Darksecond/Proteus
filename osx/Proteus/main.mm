@@ -27,8 +27,8 @@
 
 #include "stl/time/hf_timer.h"
 
-#include "graphics/backend/opengl.h"
-#include "graphics/backend/buffer_objects.h"
+#include "backend/opengl.h"
+#include "backend/buffer_objects.h"
 
 static std::string ResourceDirectory()
 {
@@ -145,18 +145,18 @@ int main(int argc, char* argv[])
     init_opengl();
     
     int test_vbo_data[4096];
-    auto handle = graphics::backend::create_vertex_buffer(4096, &test_vbo_data);
-    graphics::backend::destroy_vertex_buffer(handle);
-    handle = graphics::backend::create_vertex_buffer(4096, &test_vbo_data);
+    auto handle = backend::create_vertex_buffer(4096, &test_vbo_data);
+    backend::destroy_vertex_buffer(handle);
+    handle = backend::create_vertex_buffer(4096, &test_vbo_data);
     std::cout << handle.index << "," << handle.generation << std::endl;
-    graphics::backend::destroy_vertex_buffer(handle);
+    backend::destroy_vertex_buffer(handle);
     
     GLenum error = glGetError();
     if(error != GL_NO_ERROR)
         std::cerr << "OpenGL Error " << error << ": " << (const char*)gluErrorString(error) << std::endl;
     
-    auto ihandle = graphics::backend::create_index_buffer(16, graphics::backend::index_format::UINT, &test_vbo_data);
-    graphics::backend::destroy_index_buffer(ihandle);
+    auto ihandle = backend::create_index_buffer(16, backend::index_format::UINT, &test_vbo_data);
+    backend::destroy_index_buffer(ihandle);
     
     glfwTerminate();
 }
