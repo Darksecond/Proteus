@@ -15,10 +15,14 @@ static stl::fixed_array<uint32_t, _vertex_buffer_amount> _vertex_buffer_generati
 static stl::fixed_array<GLuint, _index_buffer_amount> _index_buffers;
 static stl::fixed_array<uint32_t, _index_buffer_amount> _index_buffer_generations;
 
-backend::vertex_buffer_handle backend::create_vertex_buffer(uint32_t size, const void* data)
+//TODO save count and stride for later retreival?
+backend::vertex_buffer_handle backend::create_vertex_buffer(uint32_t count, uint32_t stride, const void* data)
 {
     assert(data);
-    assert(size > 0);
+    assert(count > 0);
+    assert(stride > 0);
+    
+    uint32_t size = count * stride;
     
     for(unsigned i = 0; i < _vertex_buffer_amount; ++i)
     {

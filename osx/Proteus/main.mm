@@ -145,9 +145,9 @@ int main(int argc, char* argv[])
     init_opengl();
     
     int test_vbo_data[4096];
-    auto handle = backend::create_vertex_buffer(4096, &test_vbo_data);
+    auto handle = backend::create_vertex_buffer(4096, sizeof(int), &test_vbo_data);
     backend::destroy_vertex_buffer(handle);
-    handle = backend::create_vertex_buffer(4096, &test_vbo_data);
+    handle = backend::create_vertex_buffer(4096, sizeof(int), &test_vbo_data);
     std::cout << handle.index << "," << handle.generation << std::endl;
     backend::destroy_vertex_buffer(handle);
     

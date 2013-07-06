@@ -25,7 +25,7 @@ namespace backend
      * will invalid if there are no more buffers available.
      */
     //TODO replace size with count and stride?
-    vertex_buffer_handle create_vertex_buffer(uint32_t size, const void* data);
+    vertex_buffer_handle create_vertex_buffer(uint32_t count, uint32_t stride, const void* data);
     
     /**
      * Destroy a vertex buffer from a handle.
